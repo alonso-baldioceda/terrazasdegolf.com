@@ -63,6 +63,7 @@
     "react": "^16.14.0",
     "react-bootstrap": "^1.6.1",
     "react-countdown": "^2.3.2",
+    "react-datepicker": "^4.4.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.12.0",

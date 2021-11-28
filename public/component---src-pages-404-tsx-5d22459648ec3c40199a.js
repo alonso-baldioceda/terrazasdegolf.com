@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkterrazasdegolf_com=self.webpackChunkterrazasdegolf_com||[]).push([[218],{9786:function(e,t,l){l.r(t);var n=l(7294),a=l(7071);t.default=function(){return n.createElement(n.Fragment,null,n.createElement(a.Z,null),n.createElement("h1",null,"404: Page Not Found"),n.createElement("p",null,"Check our latest articles"))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-5d22459648ec3c40199a.js.map
