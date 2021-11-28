@@ -1,0 +1,89 @@
+/* General */
+
+html * {
+  font-family: "Jost", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+/* .main {
+  padding-top: 5rem;
+} */
+
+/* Text colors */
+
+.text-lunar-green {
+  color: var(--lunar-green);
+}
+
+.text-dingley {
+  color: var(--dingley);
+}
+
+/* Background colors */
+
+.bg-acapulco {
+  background: var(--acapulco);
+}
+
+.bg-alabaster {
+  background: var(--alabaster);
+}
+
+.bg-athens-gray {
+  background: var(--athens-gray);
+}
+
+.bg-black {
+  background: var(--black);
+}
+
+.bg-floral-white {
+  background: var(--floral-white);
+}
+
+.bg-geyser {
+  background: var(--geyser);
+}
+
+.bg-gin {
+  background: var(--gin);
+}
+
+.bg-gun-powder {
+  background: var(--gun-powder);
+}
+
+.bg-linen {
+  background: var(--linen);
+}
+
+.bg-manhattan {
+  background: var(--manhattan);
+}
+
+.bg-merino {
+  background: var(--merino);
+}
+
+.bg-terracotta {
+  background: var(--terracotta);
+}
+
+.bg-white {
+  background: var(--white);
+}
+
+/* Nuevos */
+
+.bg-lunar-green {
+  background: var(--lunar-green);
+}
+
+.bg-dingley {
+  background: var(--dingley);
+}
+
+.bg-salomie {
+  background: var(--salomie);
+}
