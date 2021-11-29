@@ -39,11 +39,11 @@ module.exports = {
         anchor: "#sleeping-arrangements",
         translate: "nav.arrangements.url",
       },
-      // {
-      //   name: "units",
-      //   anchor: "#units",
-      //   translate: "nav.units.url",
-      // },
+      {
+        name: "units",
+        anchor: "#units",
+        translate: "nav.units.url",
+      },
       {
         name: "common",
         anchor: "#common-spaces",

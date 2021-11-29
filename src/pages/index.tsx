@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
+import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import Container from "react-bootstrap/Container";
@@ -10,18 +11,19 @@ import Col from "react-bootstrap/Col";
 import Layout from "./../components/layout";
 import SEO from "./../components/seo";
 import FadeInWhenVisible from "./../components/fadeInWhenVisible";
-// import Hero from "./../components/hero";
 import HeroTwoColumns from "./../components/heroTwoColumns";
+import Reservations from "./../components/reservations";
 import Spacer from "./../components/spacer";
-import Card from "./../components/card";
+// import Card from "./../components/card";
 import Album from "./../components/album";
 import TextWithIcon from "./../components/textWithIcon";
 import Contact from "./../components/contact";
 
 // Assets
-import BedBunkIcon from "./../images/svg/bed-bunk.svg";
-import BedSingleIcon from "./../images/svg/bed-single.svg";
-import BedIQueenIcon from "./../images/svg/bed-queen.svg";
+// import BedBunkIcon from "./../images/svg/bed-bunk.svg";
+// import BedSingleIcon from "./../images/svg/bed-single.svg";
+// import BedIQueenIcon from "./../images/svg/bed-queen.svg";
+import IconGolfBall from "./../images/svg/golf-ball.svg";
 import CheckInIcon from "./../images/svg/clock.svg";
 import CheckOutIcon from "./../images/svg/clock.svg";
 import SmokeIcon from "./../images/svg/no-smoking.svg";
@@ -52,6 +54,8 @@ import BackyardIcon from "./../images/svg/backyard.svg";
 import GrillIcon from "./../images/svg/grill.svg";
 import WoodFireIcon from "./../images/svg/wood-fire.svg";
 import MapIcon from "./../images/svg/navigator.svg";
+
+const IndexPageWrapper = styled.div``;
 
 // Constants
 import { unitsImagesAlts, commonImagesAlts } from "./../modules/constants";
@@ -175,6 +179,16 @@ const IndexPage = ({ data }: any) => {
     setActive(id);
   };
 
+  const introList = [
+    "5 km (3 miles) from San José International Airport and 9 km (5 miles) from Tobias Bolaños International Airport (SYQ)",
+    "200 meters from Wyndham Herradura Conference Center",
+    "300 meters from Double Tree Cariari Hotel",
+    "1 km from Pedregal Convention Center",
+    "Adjacent to Cariari Country Club golf course",
+    "Walking distance of public services",
+    "Surrounded by nature",
+  ];
+
   const rates = [
     {
       text: "One Queen bed",
@@ -223,11 +237,16 @@ const IndexPage = ({ data }: any) => {
   ];
 
   return (
-    <Layout current={scrollPosition} active={active} onClick={handleMenuClick}>
-      <SEO />
-      <Helmet>
-        <script type="application/ld+json">
-          {`
+    <IndexPageWrapper>
+      <Layout
+        current={scrollPosition}
+        active={active}
+        onClick={handleMenuClick}
+      >
+        <SEO />
+        <Helmet>
+          <script type="application/ld+json">
+            {`
             {
               "@context": "https://schema.org",
               "@type": "Organization",
@@ -240,95 +259,155 @@ const IndexPage = ({ data }: any) => {
               }
             }
           `}
-        </script>
-      </Helmet>
-      <section className="anchor-block" id="hero">
-        {/* <Hero
-          imgSrc={homeTopImage}
-          imgMdUpSrc={homeTopMdUpImage}
-          title="hero.title"
-          className="mb-3 mb-lg-4"
-        /> */}
-        <HeroTwoColumns
-          image={homeTopImage}
-          title="hero.title"
-          description="Terrazas de Golf es una antigua residencia familiar transformada en un confortable y acogedor Boutique Hotel, atendido por sus propietarios con la misión de servir."
-          bgColor="bg-lunar-green"
-          textColor="text-white"
-        />
-      </section>
-      <section className="anchor-block" id="sleeping-arrangements">
-        <FadeInWhenVisible>
-          <div className="bg-white">
+          </script>
+        </Helmet>
+        <section className="anchor-block" id="hero">
+          <HeroTwoColumns
+            image={homeTopImage}
+            imageMdUp={homeTopMdUpImage}
+            title="hero.title"
+            description="Terrazas de Golf es una antigua residencia familiar transformada en un confortable y acogedor Boutique Hotel, atendido por sus propietarios con la misión de servir."
+            bgColor="bg-lunar-green"
+            textColor="text-white"
+          />
+        </section>
+        <section
+          id="reservations"
+          className="bg-salomie py-4 position-relative"
+        >
+          <Container>
+            <Row className="justify-content-md-center">
+              <Col lg={9}>
+                <div className="reservations">
+                  <Reservations />
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <section id="initial-description">
+          <Spacer>
             <Container>
-              <Row>
+              <Row className="justify-content-md-center">
                 <Col xs={12}>
-                  <Spacer>
-                    <h2 className="m-0">{t(`arrangements.heading`)}</h2>
-                  </Spacer>
+                  <h2 className="mb-3 mb-lg-5">
+                    Why to stay at Terrazas de Golf?
+                  </h2>
+                  <p>
+                    Terrazas de Golf, former family residence turned into a
+                    comfortable boutique hotel since January 2011.
+                  </p>
+                  <p className="mb-3">
+                    <strong>Why to stay with us?</strong> Run by its owners with
+                    the mission to serve, inspired by their years of
+                    participation as members of a local Rotary Club and their
+                    volunteer work assisting children in social risk at the
+                    Oratorio Don Bosco Foundation.
+                  </p>
                 </Col>
+                <Col lg={12}>
+                  <p className="mb-4">
+                    Tenemos una ubicación proviliegiada, y rodeada de
+                    naturaleza; cerca de:
+                  </p>
+                  <ul className="mb-0 ps-0">
+                    {introList.map((item, itemIndex) => (
+                      <li
+                        className="d-flex mb-3 ps-0"
+                        key={`list-item${itemIndex}`}
+                      >
+                        <div className="d-flex align-items-center">
+                          <span className="me-3">
+                            <IconGolfBall
+                              className="bullet"
+                              style={{ width: "22px" }}
+                            />
+                          </span>
+                          {item}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </Col>
+                <Col lg={6}></Col>
               </Row>
             </Container>
-            <Spacer bottomOnly={true}>
+          </Spacer>
+        </section>
+        <section className="anchor-block" id="sleeping-arrangements">
+          <FadeInWhenVisible>
+            <div className="bg-white">
               <Container>
                 <Row>
                   <Col xs={12}>
-                    <table className="table table-striped mb-5">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Description</th>
-                          <th scope="col">Rate</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {rates.map((rate, index) => (
-                          <tr key={index}>
-                            <th scope="row">
-                              <span className="mono">{index + 1}</span>
-                            </th>
-                            <td>{rate.text}</td>
-                            <td>
-                              <span className="mono">{`$${rate.rate}`}</span>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-
-                    <p className="mb-3">
-                      Fare includes breakfast and transportation to and from
-                      Juan Santamaria (SJO) and Tobias Bolanos (SYQ) Airports
-                    </p>
-
-                    <p className="mb-3">
-                      Rooms are "triple" when space allows an extra bed or sofa
-                      bed. These rooms are <span className="mono">#7</span>,{" "}
-                      <span className="mono">#8</span>,{" "}
-                      <span className="mono">#10</span>,{" "}
-                      <span className="mono">#11</span>
-                    </p>
-
-                    <p className="mb-0">
-                      Free children under <span className="mono">8</span>{" "}
-                      accompanied by their parents.
-                    </p>
-
-                    <p className="mb-0">
-                      Rooms are "triple" when space allows an extra bed or sofa
-                      bed. These rooms are <span className="mono">#7</span> and{" "}
-                      <span className="mono">#8.</span>
-                    </p>
-
-                    <p className="mb-0">Room rate for two pax.</p>
-
-                    <p className="mb-0">
-                      <span className="mono">$15</span> per additional pax.
-                    </p>
+                    <Spacer bottomOnly={true}>
+                      <h2 className="m-0">{t(`arrangements.heading`)}</h2>
+                    </Spacer>
                   </Col>
                 </Row>
               </Container>
-              {/* <div className="units">
+              <Spacer bottomOnly={true}>
+                <Container>
+                  <Row>
+                    <Col xs={12}>
+                      <table className="table table-striped mb-5">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Rate</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {rates.map((rate, index) => (
+                            <tr key={index}>
+                              <th scope="row">
+                                <span className="mono">{index + 1}</span>
+                              </th>
+                              <td>{rate.text}</td>
+                              <td>
+                                <span className="mono">{`$${rate.rate}`}</span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+
+                      <p className="mb-3">
+                        Fare includes breakfast and transportation to and from
+                        Juan Santamaria (SJO) and Tobias Bolanos (SYQ) Airports
+                      </p>
+
+                      <p className="mb-3">
+                        Rooms are "triple" when space allows an extra bed or
+                        sofa bed. These rooms are{" "}
+                        <span className="mono">#7</span>,{" "}
+                        <span className="mono">#8</span>,{" "}
+                        <span className="mono">#10</span>,{" "}
+                        <span className="mono">#11</span>
+                      </p>
+
+                      <p className="mb-0">
+                        Free children under <span className="mono">8</span>{" "}
+                        accompanied by their parents.
+                      </p>
+
+                      <p className="mb-0">
+                        Rooms are "triple" when space allows an extra bed or
+                        sofa bed. These rooms are{" "}
+                        <span className="mono">#7</span> and{" "}
+                        <span className="mono">#8.</span>
+                      </p>
+
+                      <p className="mb-0">Room rate for two pax.</p>
+
+                      <p className="mb-0">
+                        <span className="mono">$15</span> per additional pax.
+                      </p>
+                    </Col>
+                  </Row>
+                </Container>
+                {/* <div className="units">
                 <Container>
                   <Row>
                     <Col md={6} className="mb-4">
@@ -402,359 +481,360 @@ const IndexPage = ({ data }: any) => {
                   </Row>
                 </Container>
               </div> */}
-            </Spacer>
-          </div>
-        </FadeInWhenVisible>
-      </section>
-      <section className="anchor-block" id="units">
-        <FadeInWhenVisible>
-          <div className="bg-merino">
-            <Container>
-              <Row>
-                <Col sm={12}>
-                  <Spacer>
-                    <h2 className="mb-5">{t(`units.heading`)}</h2>
-                    <p className="mb-0">{t(`units.description`)}</p>
-                  </Spacer>
-                  <Spacer bottomOnly={true}>
-                    <div className="border-white">
-                      <Album
-                        images={units}
-                        alts={unitsImagesAlts}
-                        border="white"
-                      />
-                    </div>
-                  </Spacer>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        </FadeInWhenVisible>
-      </section>
-      <section className="anchor-block" id="common-spaces">
-        <FadeInWhenVisible>
-          <div className="bg-white">
-            <Container>
-              <Row>
-                <Col sm={12}>
-                  <Spacer>
-                    <h2 className="mb-5">{t(`commonSpaces.heading`)}</h2>
-                    <p className="mb-3">{t(`commonSpaces.descriptionOne`)}</p>
-                    <p className="mb-0">{t(`commonSpaces.descriptionTwo`)}</p>
-                  </Spacer>
-                  <Spacer bottomOnly={true}>
-                    <div className="common">
-                      <div className="border-athens-gray">
+              </Spacer>
+            </div>
+          </FadeInWhenVisible>
+        </section>
+        <section className="anchor-block" id="units">
+          <FadeInWhenVisible>
+            <div className="bg-merino">
+              <Container>
+                <Row>
+                  <Col sm={12}>
+                    <Spacer>
+                      <h2 className="mb-5">{t(`units.heading`)}</h2>
+                      <p className="mb-0">{t(`units.description`)}</p>
+                    </Spacer>
+                    <Spacer bottomOnly={true}>
+                      <div className="border-white">
                         <Album
-                          images={commonAreas}
-                          border="gray"
-                          alts={commonImagesAlts}
+                          images={units}
+                          alts={unitsImagesAlts}
+                          border="white"
                         />
                       </div>
-                    </div>
-                  </Spacer>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        </FadeInWhenVisible>
-      </section>
-      <section className="anchor-block" id="services">
-        <FadeInWhenVisible>
-          <div className="bg-gin">
-            <Container>
-              <Row>
-                <Col sm={12}>
-                  <Spacer>
-                    <h2 className="m-0">{t(`services.heading`)}</h2>
-                  </Spacer>
-                </Col>
-              </Row>
-            </Container>
-            <Spacer bottomOnly={true}>
-              <div className="Services">
-                <Container>
-                  <Row>
-                    <Col xs={12} className="mb-4 mb-lg-5">
-                      <h3 className="mb-0">{t(`services.headingBasics`)}</h3>
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<WifiIcon />}
-                        heading="services.wifi"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<WashingIcon />}
-                        heading="services.washingMachine"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<DryerIcon />}
-                        heading="services.dryer"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<TowelsIcon />}
-                        heading="services.essentialServices"
-                        subheading="services.essentialServicesDetails"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<EthernetIcon />}
-                        heading="services.ethernet"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<HotWaterIcon />}
-                        heading="services.hotWater"
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12} className="my-4 my-lg-5">
-                      <h3 className="mb-0">
-                        {t(`services.headingInstallations`)}
-                      </h3>
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<ParkingIcon />}
-                        heading="services.parking"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<FootprintIcon />}
-                        heading="services.petsFriedly"
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12} className="my-4 my-lg-5">
-                      <h3 className="mb-0">{t(`services.headingKitchen`)}</h3>
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<KitchenIcon />}
-                        heading="services.kitchen"
-                        subheading="services.kitchenDetails"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<OvenIcon />}
-                        heading="services.oven"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<SilverwareIcon />}
-                        heading="services.dishesAndSilverware"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<RefrigeratorIcon />}
-                        heading="services.refrigerator"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<StoveIcon />}
-                        heading="services.stove"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<CoffeeMakerIcon />}
-                        heading="services.coffeeMaker"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<OilIcon />}
-                        heading="services.cookingBasics"
-                        subheading="services.cookingBasicsDetails"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<BarbecueUtensilsIcon />}
-                        heading="services.barbecueUtensils"
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12} className="my-4 my-lg-5">
-                      <h3 className="mb-0">
-                        {t(`services.headingBedAndBath`)}
-                      </h3>
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<PillowIcon />}
-                        heading="services.extraPillowsAndBlankets"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<BedLinensIcon />}
-                        heading="services.bedLinens"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<ShampooIcon />}
-                        heading="services.shampoo"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<HairDryerIcon />}
-                        heading="services.hairDryer"
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12} className="my-4 my-lg-5">
-                      <h3 className="mb-0">{t(`services.headingOutdoor`)}</h3>
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<PatioIcon />}
-                        heading="services.patio"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<GardenIcon />}
-                        heading="services.garden"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        icon={<BackyardIcon />}
-                        heading="services.backyard"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<GrillIcon />}
-                        heading="services.grill"
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        icon={<WoodFireIcon />}
-                        heading="services.woodFire"
-                      />
-                    </Col>
-                  </Row>
-                </Container>
-              </div>
-            </Spacer>
-          </div>
-        </FadeInWhenVisible>
-      </section>
-      <section className="anchor-block" id="drive">
-        <FadeInWhenVisible>
-          <Spacer>
-            <div className="bg-white">
-              <Container>
-                <Row className="align-items-center">
-                  <Col md={5}>
-                    <h2 className="mb-5">{t(`drive.heading`)}</h2>
-                    <div className="mb-5">
-                      <a
-                        className="btn btn-dark"
-                        href="https://www.google.com/maps/place/Laguna+de+Arenal/@10.4916643,-84.9286452,12z/data=!3m1!4b1!4m5!3m4!1s0x8fa00445d4aa989b:0x8a2f8115437b0e4d!8m2!3d10.5052242!4d-84.8724284?hl=es"
-                        target="_blank"
-                      >
-                        {t(`drive.cta`)}
-                      </a>
-                    </div>
-                  </Col>
-                  <Col md={7}>
-                    <MapIcon />
+                    </Spacer>
                   </Col>
                 </Row>
               </Container>
             </div>
-          </Spacer>
-        </FadeInWhenVisible>
-      </section>
-      <section className="anchor-block" id="contact">
-        <FadeInWhenVisible>
-          <div className="bg-merino">
-            <Container>
-              <Row>
-                <Col sm={12}>
-                  <Spacer>
-                    <h2 className="m-0">{t(`contact.heading`)}</h2>
-                  </Spacer>
-                  <Spacer bottomOnly={true}>
-                    <Contact />
-                  </Spacer>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        </FadeInWhenVisible>
-      </section>
-      <section className="anchor-block" id="rules">
-        <FadeInWhenVisible>
-          <div className="bg-white">
-            <Container>
-              <Row>
-                <Col sm={12}>
-                  <Spacer>
-                    <h2 className="m-0">{t(`rules.heading`)}</h2>
-                  </Spacer>
-                </Col>
-              </Row>
-            </Container>
-            <Spacer bottomOnly={true}>
-              <div className="rules">
+          </FadeInWhenVisible>
+        </section>
+        <section className="anchor-block" id="common-spaces">
+          <FadeInWhenVisible>
+            <div className="bg-white">
+              <Container>
+                <Row>
+                  <Col sm={12}>
+                    <Spacer>
+                      <h2 className="mb-5">{t(`commonSpaces.heading`)}</h2>
+                      <p className="mb-3">{t(`commonSpaces.descriptionOne`)}</p>
+                      <p className="mb-0">{t(`commonSpaces.descriptionTwo`)}</p>
+                    </Spacer>
+                    <Spacer bottomOnly={true}>
+                      <div className="common">
+                        <div className="border-athens-gray">
+                          <Album
+                            images={commonAreas}
+                            border="gray"
+                            alts={commonImagesAlts}
+                          />
+                        </div>
+                      </div>
+                    </Spacer>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </FadeInWhenVisible>
+        </section>
+        <section className="anchor-block" id="services">
+          <FadeInWhenVisible>
+            <div className="bg-gin">
+              <Container>
+                <Row>
+                  <Col sm={12}>
+                    <Spacer>
+                      <h2 className="m-0">{t(`services.heading`)}</h2>
+                    </Spacer>
+                  </Col>
+                </Row>
+              </Container>
+              <Spacer bottomOnly={true}>
+                <div className="Services">
+                  <Container>
+                    <Row>
+                      <Col xs={12} className="mb-4 mb-lg-5">
+                        <h3 className="mb-0">{t(`services.headingBasics`)}</h3>
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<WifiIcon />}
+                          heading="services.wifi"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<WashingIcon />}
+                          heading="services.washingMachine"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<DryerIcon />}
+                          heading="services.dryer"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<TowelsIcon />}
+                          heading="services.essentialServices"
+                          subheading="services.essentialServicesDetails"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<EthernetIcon />}
+                          heading="services.ethernet"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<HotWaterIcon />}
+                          heading="services.hotWater"
+                        />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={12} className="my-4 my-lg-5">
+                        <h3 className="mb-0">
+                          {t(`services.headingInstallations`)}
+                        </h3>
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<ParkingIcon />}
+                          heading="services.parking"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<FootprintIcon />}
+                          heading="services.petsFriedly"
+                        />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={12} className="my-4 my-lg-5">
+                        <h3 className="mb-0">{t(`services.headingKitchen`)}</h3>
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<KitchenIcon />}
+                          heading="services.kitchen"
+                          subheading="services.kitchenDetails"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<OvenIcon />}
+                          heading="services.oven"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<SilverwareIcon />}
+                          heading="services.dishesAndSilverware"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<RefrigeratorIcon />}
+                          heading="services.refrigerator"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<StoveIcon />}
+                          heading="services.stove"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<CoffeeMakerIcon />}
+                          heading="services.coffeeMaker"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<OilIcon />}
+                          heading="services.cookingBasics"
+                          subheading="services.cookingBasicsDetails"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<BarbecueUtensilsIcon />}
+                          heading="services.barbecueUtensils"
+                        />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={12} className="my-4 my-lg-5">
+                        <h3 className="mb-0">
+                          {t(`services.headingBedAndBath`)}
+                        </h3>
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<PillowIcon />}
+                          heading="services.extraPillowsAndBlankets"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<BedLinensIcon />}
+                          heading="services.bedLinens"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<ShampooIcon />}
+                          heading="services.shampoo"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<HairDryerIcon />}
+                          heading="services.hairDryer"
+                        />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={12} className="my-4 my-lg-5">
+                        <h3 className="mb-0">{t(`services.headingOutdoor`)}</h3>
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<PatioIcon />}
+                          heading="services.patio"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<GardenIcon />}
+                          heading="services.garden"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          icon={<BackyardIcon />}
+                          heading="services.backyard"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<GrillIcon />}
+                          heading="services.grill"
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          icon={<WoodFireIcon />}
+                          heading="services.woodFire"
+                        />
+                      </Col>
+                    </Row>
+                  </Container>
+                </div>
+              </Spacer>
+            </div>
+          </FadeInWhenVisible>
+        </section>
+        <section className="anchor-block" id="drive">
+          <FadeInWhenVisible>
+            <Spacer>
+              <div className="bg-white">
                 <Container>
-                  <Row>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        heading="rules.checkIn"
-                        icon={<CheckInIcon />}
-                      />
+                  <Row className="align-items-center">
+                    <Col md={5}>
+                      <h2 className="mb-5">{t(`drive.heading`)}</h2>
+                      <div className="mb-5">
+                        <a
+                          className="btn btn-dark"
+                          href="https://www.google.com/maps/place/Laguna+de+Arenal/@10.4916643,-84.9286452,12z/data=!3m1!4b1!4m5!3m4!1s0x8fa00445d4aa989b:0x8a2f8115437b0e4d!8m2!3d10.5052242!4d-84.8724284?hl=es"
+                          target="_blank"
+                        >
+                          {t(`drive.cta`)}
+                        </a>
+                      </div>
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        heading="rules.checkOut"
-                        icon={<CheckOutIcon />}
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4">
-                      <TextWithIcon
-                        heading="rules.smoke"
-                        icon={<SmokeIcon />}
-                      />
-                    </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                      <TextWithIcon
-                        heading="rules.party"
-                        icon={<PartyIcon />}
-                      />
+                    <Col md={7}>
+                      <MapIcon />
                     </Col>
                   </Row>
                 </Container>
               </div>
             </Spacer>
-          </div>
-        </FadeInWhenVisible>
-      </section>
-    </Layout>
+          </FadeInWhenVisible>
+        </section>
+        <section className="anchor-block" id="contact">
+          <FadeInWhenVisible>
+            <div className="bg-merino">
+              <Container>
+                <Row>
+                  <Col sm={12}>
+                    <Spacer>
+                      <h2 className="m-0">{t(`contact.heading`)}</h2>
+                    </Spacer>
+                    <Spacer bottomOnly={true}>
+                      <Contact />
+                    </Spacer>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </FadeInWhenVisible>
+        </section>
+        <section className="anchor-block" id="rules">
+          <FadeInWhenVisible>
+            <div className="bg-white">
+              <Container>
+                <Row>
+                  <Col sm={12}>
+                    <Spacer>
+                      <h2 className="m-0">{t(`rules.heading`)}</h2>
+                    </Spacer>
+                  </Col>
+                </Row>
+              </Container>
+              <Spacer bottomOnly={true}>
+                <div className="rules">
+                  <Container>
+                    <Row>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          heading="rules.checkIn"
+                          icon={<CheckInIcon />}
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          heading="rules.checkOut"
+                          icon={<CheckOutIcon />}
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4">
+                        <TextWithIcon
+                          heading="rules.smoke"
+                          icon={<SmokeIcon />}
+                        />
+                      </Col>
+                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                        <TextWithIcon
+                          heading="rules.party"
+                          icon={<PartyIcon />}
+                        />
+                      </Col>
+                    </Row>
+                  </Container>
+                </div>
+              </Spacer>
+            </div>
+          </FadeInWhenVisible>
+        </section>
+      </Layout>
+    </IndexPageWrapper>
   );
 };
 
@@ -768,7 +848,7 @@ export const query = graphql`
     }
     homeTopImage: file(relativePath: { eq: "home-top.jpg" }) {
       childImageSharp {
-        gatsbyImageData(width: 800)
+        gatsbyImageData(width: 992)
       }
     }
     homeTopMdUpImage: file(relativePath: { eq: "home-top-md-up.jpg" }) {

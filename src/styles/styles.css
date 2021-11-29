@@ -15,8 +15,8 @@
 @import "@fontsource/playfair-display/900.css";
 
 @import "./variables.css";
-@import "./typography.css";
 @import "./common.css";
+@import "./typography.css";
 @import "./buttons.css";
 
 @import "./vendor/styles.css";

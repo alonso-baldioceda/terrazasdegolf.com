@@ -15,38 +15,50 @@ h6 {
 }
 
 h1 {
-  font-size: 2.125rem !important;
+  font-size: 1.5rem !important;
+}
 
-  @media (min-width: 992px) {
-    font-size: 3.125rem !important;
+@media (min-width: 992px) {
+  h1 {
+    font-size: 2rem !important;
   }
+}
 
-  @media (min-width: 1200px) {
-    font-size: 4.125rem !important;
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.5rem !important;
   }
 }
 
 h2 {
-  font-size: 1.875rem !important;
+  font-size: 1.25rem !important;
+}
 
-  @media (min-width: 992px) {
-    font-size: 2rem !important;
+@media (min-width: 992px) {
+  h2 {
+    font-size: 1.75rem !important;
   }
+}
 
-  @media (min-width: 1200px) {
-    font-size: 2.125rem !important;
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2.25rem !important;
   }
 }
 
 h3 {
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
+}
 
-  @media (min-width: 992px) {
-    font-size: 1.375rem !important;
-  }
-
-  @media (min-width: 1200px) {
+@media (min-width: 992px) {
+  h3 {
     font-size: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 2rem !important;
   }
 }
 
