@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import ClassNames from "classnames";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import Container from "react-bootstrap/Container";
@@ -271,68 +272,69 @@ const IndexPage = ({ data }: any) => {
             textColor="text-white"
           />
         </section>
-        <section
-          id="reservations"
-          className="bg-salomie py-4 position-relative"
-        >
-          <Container>
-            <Row className="justify-content-md-center">
-              <Col lg={9}>
-                <div className="reservations">
-                  <Reservations />
-                </div>
-              </Col>
-            </Row>
-          </Container>
+        <section id="reservations" className="position-relative">
+          <Spacer bottomOnly={true}>
+            <div className="bg-salomie py-4 position-relative">
+              <Container>
+                <Row className="justify-content-md-center">
+                  <Col lg={9}>
+                    <div className="reservations">
+                      <Reservations />
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </Spacer>
         </section>
         <section id="initial-description">
-          <Spacer>
-            <Container>
-              <Row className="justify-content-md-center">
-                <Col xs={12}>
-                  <h2 className="mb-3 mb-lg-5">
-                    Why to stay at Terrazas de Golf?
-                  </h2>
-                  <p>
-                    Terrazas de Golf, former family residence turned into a
-                    comfortable boutique hotel since January 2011.
-                  </p>
-                  <p className="mb-3">
-                    <strong>Why to stay with us?</strong> Run by its owners with
-                    the mission to serve, inspired by their years of
-                    participation as members of a local Rotary Club and their
-                    volunteer work assisting children in social risk at the
-                    Oratorio Don Bosco Foundation.
-                  </p>
-                </Col>
-                <Col lg={12}>
-                  <p className="mb-4">
-                    Tenemos una ubicación proviliegiada, y rodeada de
-                    naturaleza; cerca de:
-                  </p>
-                  <ul className="mb-0 ps-0">
-                    {introList.map((item, itemIndex) => (
-                      <li
-                        className="d-flex mb-3 ps-0"
-                        key={`list-item${itemIndex}`}
-                      >
-                        <div className="d-flex align-items-center">
-                          <span className="me-3">
-                            <IconGolfBall
-                              className="bullet"
-                              style={{ width: "22px" }}
-                            />
-                          </span>
-                          {item}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </Col>
-                <Col lg={6}></Col>
-              </Row>
-            </Container>
-          </Spacer>
+          <Container>
+            <Row className="justify-content-md-center">
+              <Col xs={12}>
+                <h2 className="mb-3 mb-lg-5">
+                  Why to stay at Terrazas de Golf?
+                </h2>
+                <p>
+                  Terrazas de Golf, former family residence turned into a
+                  comfortable boutique hotel since January 2011.
+                </p>
+                <p className="mb-3">
+                  <strong>Why to stay with us?</strong> Run by its owners with
+                  the mission to serve, inspired by their years of participation
+                  as members of a local Rotary Club and their volunteer work
+                  assisting children in social risk at the Oratorio Don Bosco
+                  Foundation.
+                </p>
+              </Col>
+              <Col lg={12}>
+                <p className="mb-4">
+                  Tenemos una ubicación proviliegiada, y rodeada de naturaleza;
+                  cerca de:
+                </p>
+                <ul className="mb-0 ps-0">
+                  {introList.map((item, itemIndex) => (
+                    <li
+                      key={`list-item${itemIndex}`}
+                      className={ClassNames("d-flex ps-0", {
+                        "mb-3": introList.length !== itemIndex + 1,
+                      })}
+                    >
+                      <div className="d-flex align-items-center">
+                        <span className="me-3">
+                          <IconGolfBall
+                            className="bullet"
+                            style={{ width: "22px" }}
+                          />
+                        </span>
+                        {item}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </Col>
+              <Col lg={6}></Col>
+            </Row>
+          </Container>
         </section>
         <section className="anchor-block" id="sleeping-arrangements">
           <FadeInWhenVisible>
@@ -340,7 +342,7 @@ const IndexPage = ({ data }: any) => {
               <Container>
                 <Row>
                   <Col xs={12}>
-                    <Spacer bottomOnly={true}>
+                    <Spacer>
                       <h2 className="m-0">{t(`arrangements.heading`)}</h2>
                     </Spacer>
                   </Col>

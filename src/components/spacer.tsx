@@ -14,6 +14,18 @@ export const StyledSpacing = styled.div`
     padding: 4.5rem 0;
   }
 
+  &.top-only {
+    padding: 3rem 0 0;
+
+    @media (min-width: 768px) {
+      padding: 3.5rem 0 0;
+    }
+
+    @media (min-width: 992px) {
+      padding: 4.5rem 0 0;
+    }
+  }
+
   &.bottom-only {
     padding: 0 0 3rem;
 
@@ -31,12 +43,18 @@ export const StyledSpacing = styled.div`
 export interface IProps {
   anchorid?: string;
   bottomOnly?: boolean;
+  topOnly?: boolean;
   children: any;
 }
 
 const Spacer: React.FC<IProps> = ({ bottomOnly, children }) => {
   return (
-    <StyledSpacing className={classNames({ "bottom-only": bottomOnly })}>
+    <StyledSpacing
+      className={classNames(
+        { "bottom-only": bottomOnly },
+        { "top-only": bottomOnly }
+      )}
+    >
       {children}
     </StyledSpacing>
   );
