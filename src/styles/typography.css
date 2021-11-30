@@ -1,0 +1,93 @@
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Jost", sans-serif !important;
+
+  font-weight: 800 !important;
+  letter-spacing: 1.5px;
+  font-style: italic;
+  /* text-transform: uppercase; */
+}
+
+h1 {
+  font-size: 1.5rem !important;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+h2 {
+  font-size: 1.25rem !important;
+}
+
+@media (min-width: 992px) {
+  h2 {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2.25rem !important;
+  }
+}
+
+h3 {
+  font-size: 1rem !important;
+}
+
+@media (min-width: 992px) {
+  h3 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 2rem !important;
+  }
+}
+
+/* Paragraph */
+
+p {
+  color: rgb(34, 34, 34);
+  font-weight: 400;
+}
+
+.mono {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* Links */
+
+a.muted-link {
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+a.muted-link svg {
+  fill: var(--black);
+  height: 24px;
+  margin-right: 1.5rem;
+  width: 24px;
+}
+
+a.muted-link svg.svg-white {
+  fill: var(--white);
+}

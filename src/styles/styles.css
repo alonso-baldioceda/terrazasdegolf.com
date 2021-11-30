@@ -1,0 +1,22 @@
+/* colors */
+/* https://mycolor.space/?hex=%23354335&sub=1#354335&sub=1 */
+/* Based on Skip Shade Gradient */
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+@import "@fontsource/jost/300.css";
+@import "@fontsource/jost/400.css";
+@import "@fontsource/jost/800.css";
+
+@import "@fontsource/share-tech-mono/400.css";
+
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/playfair-display/800.css";
+@import "@fontsource/playfair-display/900.css";
+
+@import "./variables.css";
+@import "./common.css";
+@import "./typography.css";
+@import "./buttons.css";
+
+@import "./vendor/styles.css";

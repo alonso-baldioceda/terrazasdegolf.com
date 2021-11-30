@@ -1,0 +1,9 @@
+// For the full config details, go here: https://github.com/wesbos/eslint-config-wesbos
+{
+  "extends": ["recommended"],
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
