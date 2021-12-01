@@ -12,19 +12,16 @@ import Col from "react-bootstrap/Col";
 import Layout from "./../components/layout";
 import SEO from "./../components/seo";
 import FadeInWhenVisible from "./../components/fadeInWhenVisible";
+import Spacer from "./../components/spacer";
 import HeroTwoColumns from "./../components/heroTwoColumns";
 import Reservations from "./../components/reservations";
-import Spacer from "./../components/spacer";
-// import Card from "./../components/card";
+import CardImageWithList from "./../components/cardImageWithList";
 import Album from "./../components/album";
 import TextWithIcon from "./../components/textWithIcon";
 import Contact from "./../components/contact";
 
 // Assets
-// import BedBunkIcon from "./../images/svg/bed-bunk.svg";
-// import BedSingleIcon from "./../images/svg/bed-single.svg";
-// import BedIQueenIcon from "./../images/svg/bed-queen.svg";
-import IconGolfBall from "./../images/svg/golf-ball.svg";
+import IconBullet from "./../images/svg/circle.svg";
 import CheckInIcon from "./../images/svg/clock.svg";
 import CheckOutIcon from "./../images/svg/clock.svg";
 import SmokeIcon from "./../images/svg/no-smoking.svg";
@@ -63,7 +60,7 @@ import { unitsImagesAlts, commonImagesAlts } from "./../modules/constants";
 
 const IndexPage = ({ data }: any) => {
   const { t } = useTranslation();
-  const { site, homeTopImage, homeTopMdUpImage, units, commonAreas } =
+  const { site, homeTopImage, homeTopMdUpImage, elderly, units, commonAreas } =
     data || [];
 
   const { siteUrl, phoneRef } = site.siteMetadata;
@@ -190,6 +187,15 @@ const IndexPage = ({ data }: any) => {
     "Surrounded by nature",
   ];
 
+  const elderlyPattern = "elderly.list.item";
+
+  const discounts = [
+    `${elderlyPattern}1`,
+    `${elderlyPattern}2`,
+    `${elderlyPattern}3`,
+    `${elderlyPattern}4`,
+  ];
+
   const rates = [
     {
       text: "One Queen bed",
@@ -237,6 +243,19 @@ const IndexPage = ({ data }: any) => {
     },
   ];
 
+  const roomsIncludes = [
+    "Private bathroom",
+    "Air conditioning",
+    '32" TV with cable',
+    "Telephone",
+    "Minibar",
+    "Clock-radio",
+    "Safe-deposit box",
+    "Wi-Fi",
+    "Coffee Maker and complimentary coffee",
+    "Hair dryer",
+  ];
+
   return (
     <IndexPageWrapper>
       <Layout
@@ -273,68 +292,106 @@ const IndexPage = ({ data }: any) => {
           />
         </section>
         <section id="reservations" className="position-relative">
-          <Spacer bottomOnly={true}>
-            <div className="bg-salomie py-4 position-relative">
+          {/* <Spacer bottomOnly={true}> */}
+          <div className="bg-salomie py-4 position-relative">
+            <Container>
+              <Row className="justify-content-md-center">
+                <Col lg={9}>
+                  <div className="reservations">
+                    <Reservations />
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          {/* </Spacer> */}
+        </section>
+        <section id="initial-description" className="bg-merino">
+          <Spacer>
+            <div className="bg-merino">
               <Container>
-                <Row className="justify-content-md-center">
-                  <Col lg={9}>
-                    <div className="reservations">
-                      <Reservations />
+                <Row className="justify-content-md-center align-items-center">
+                  <Col xs={12}>
+                    {/* <Spacer bottomOnly={true}> */}
+                    <h2 className="mb-3 mb-lg-5 text-lg-center">
+                      Why to stay at Terrazas de Golf?
+                    </h2>
+                    <p className="text-lg-center mb-3 mb-lg-5">
+                      Terrazas de Golf, former family residence turned into a
+                      comfortable boutique hotel since January 2011.
+                    </p>
+                    {/* </Spacer> */}
+                  </Col>
+                  <Col lg={8}>
+                    <div className="px-0 px-lg-5 mb-5 mb-lg-0">
+                      {/* <h3 className="mb-3">Why to stay with us?</h3> */}
+                      <p className="">
+                        Run by its owners with the mission to serve, inspired by
+                        their years of participation as members of a local
+                        Rotary Club and their volunteer work assisting children
+                        in social risk at the Oratorio Don Bosco Foundation.
+                      </p>
+
+                      <p className="mb-3 md-lg-5">
+                        Tenemos una ubicación proviliegiada, y rodeada de
+                        naturaleza; cerca de:
+                      </p>
+                      <ul className="mb-0 ps-0">
+                        {introList.map((item, itemIndex) => (
+                          <li
+                            key={`list-item${itemIndex}`}
+                            className={ClassNames("d-flex ps-0", {
+                              "mb-2": introList.length !== itemIndex + 1,
+                            })}
+                          >
+                            <div className="d-flex px-4">
+                              <span className="me-3">
+                                <IconBullet
+                                  className="bullet"
+                                  style={{ width: "10px", marginTop: "-4px" }}
+                                />
+                              </span>
+                              {item}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+                  </Col>
+                  <Col lg={4}>
+                    <CardImageWithList
+                      image={elderly}
+                      title="elderly.heading"
+                      list={discounts}
+                    />
+                    {/* <div className="p-4 p-lg-5 border h-100">
+                      <p className="mb-4">Discounts:</p>
+                      <ul className="mb-0 ps-0">
+                        {discounts.map((item, itemIndex) => (
+                          <li
+                            key={`list-item${itemIndex}`}
+                            className={ClassNames("d-flex ps-0", {
+                              "mb-3": discounts.length !== itemIndex + 1,
+                            })}
+                          >
+                            <div className="d-flex">
+                              <span className="me-3">
+                                <IconBullet
+                                  className="bullet"
+                                  style={{ width: "10px", marginTop: "-4px" }}
+                                />
+                              </span>
+                              {item}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div> */}
                   </Col>
                 </Row>
               </Container>
             </div>
           </Spacer>
-        </section>
-        <section id="initial-description">
-          <Container>
-            <Row className="justify-content-md-center">
-              <Col xs={12}>
-                <h2 className="mb-3 mb-lg-5">
-                  Why to stay at Terrazas de Golf?
-                </h2>
-                <p>
-                  Terrazas de Golf, former family residence turned into a
-                  comfortable boutique hotel since January 2011.
-                </p>
-                <p className="mb-3">
-                  <strong>Why to stay with us?</strong> Run by its owners with
-                  the mission to serve, inspired by their years of participation
-                  as members of a local Rotary Club and their volunteer work
-                  assisting children in social risk at the Oratorio Don Bosco
-                  Foundation.
-                </p>
-              </Col>
-              <Col lg={12}>
-                <p className="mb-4">
-                  Tenemos una ubicación proviliegiada, y rodeada de naturaleza;
-                  cerca de:
-                </p>
-                <ul className="mb-0 ps-0">
-                  {introList.map((item, itemIndex) => (
-                    <li
-                      key={`list-item${itemIndex}`}
-                      className={ClassNames("d-flex ps-0", {
-                        "mb-3": introList.length !== itemIndex + 1,
-                      })}
-                    >
-                      <div className="d-flex align-items-center">
-                        <span className="me-3">
-                          <IconGolfBall
-                            className="bullet"
-                            style={{ width: "22px" }}
-                          />
-                        </span>
-                        {item}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </Col>
-              <Col lg={6}></Col>
-            </Row>
-          </Container>
         </section>
         <section className="anchor-block" id="sleeping-arrangements">
           <FadeInWhenVisible>
@@ -352,6 +409,7 @@ const IndexPage = ({ data }: any) => {
                 <Container>
                   <Row>
                     <Col xs={12}>
+                      <h3 className="mb-5">Our rates</h3>
                       <table className="table table-striped mb-5">
                         <thead>
                           <tr>
@@ -409,80 +467,6 @@ const IndexPage = ({ data }: any) => {
                     </Col>
                   </Row>
                 </Container>
-                {/* <div className="units">
-                <Container>
-                  <Row>
-                    <Col md={6} className="mb-4">
-                      <Card
-                        title="units.unit1.heading"
-                        list={[
-                          {
-                            icon: <BedBunkIcon />,
-                            text: "units.unit1.item1",
-                          },
-                          {
-                            icon: <BedSingleIcon />,
-                            text: "units.unit1.item2",
-                          },
-                          {
-                            icon: <BedIQueenIcon />,
-                            text: "units.unit1.item3",
-                          },
-                        ]}
-                      />
-                    </Col>
-                    <Col md={6} className="mb-4">
-                      <Card
-                        title="units.unit2.heading"
-                        list={[
-                          {
-                            icon: <BedSingleIcon />,
-                            text: "units.unit2.item1",
-                          },
-                          {
-                            icon: <BedIQueenIcon />,
-                            text: "units.unit2.item2",
-                          },
-                        ]}
-                      />
-                    </Col>
-                    <Col md={6} className="mb-4 mb-lg-0">
-                      <Card
-                        title="units.unit3.heading"
-                        list={[
-                          {
-                            icon: <BedBunkIcon />,
-                            text: "units.unit3.item1",
-                          },
-                          {
-                            icon: <BedIQueenIcon />,
-                            text: "units.unit3.item2",
-                          },
-                        ]}
-                      />
-                    </Col>
-                    <Col md={6} className="mb-4 mb-lg-0">
-                      <Card
-                        title="units.unit4.heading"
-                        list={[
-                          {
-                            icon: <BedBunkIcon />,
-                            text: "units.unit4.item1",
-                          },
-                          {
-                            icon: <BedSingleIcon />,
-                            text: "units.unit4.item2",
-                          },
-                          {
-                            icon: <BedIQueenIcon />,
-                            text: "units.unit4.item3",
-                          },
-                        ]}
-                      />
-                    </Col>
-                  </Row>
-                </Container>
-              </div> */}
               </Spacer>
             </div>
           </FadeInWhenVisible>
@@ -854,6 +838,11 @@ export const query = graphql`
       }
     }
     homeTopMdUpImage: file(relativePath: { eq: "home-top-md-up.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 1600)
+      }
+    }
+    elderly: file(relativePath: { eq: "elderly.jpg" }) {
       childImageSharp {
         gatsbyImageData(width: 1600)
       }

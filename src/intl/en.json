@@ -6,7 +6,7 @@
   },
   "nav": {
     "arrangements": {
-      "url": "Sleeping Arrangements",
+      "url": "Rooms",
       "target": "#sleeping-arrangements"
     },
     "units": {
@@ -44,7 +44,16 @@
   "tourDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae natus optio odit vitae, eaque itaque labore, ea temporibus numquam delectus, provident illo aliquid accusamus ad. Illo neque inventore nostrum illum!",
   "seeAllPictures": "See all pictures",
   "arrangements": {
-    "heading": "Sleeping arrangements"
+    "heading": "Rooms"
+  },
+  "elderly": {
+    "heading": "Descuentos",
+    "list": {
+      "item1": "Mayores de 65 años",
+      "item2": "Turismo médico",
+      "item3": "Reservaciones a través de la web",
+      "item4": "Tarifas especiales para convenciones"
+    }
   },
   "units": {
     "heading": "The cottages",

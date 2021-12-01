@@ -5,7 +5,7 @@ interface IProps {
 }
 
 const ListGroup: React.FC<IProps> = ({ children }) => (
-  <ul className="mb-0 p-0 list-unstyled">{children}</ul>
+  <ul className="mb-0 ps-0">{children}</ul>
 );
 
 export default ListGroup;

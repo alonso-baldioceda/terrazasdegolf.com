@@ -46,6 +46,15 @@
   "arrangements": {
     "heading": "Distribución de las camas"
   },
+  "elderly": {
+    "heading": "Descuentos",
+    "list": {
+      "item1": "Mayores de 65 años",
+      "item2": "Turismo médico",
+      "item3": "Reservaciones a través de la web",
+      "item4": "Tarifas especiales para convenciones"
+    }
+  },
   "units": {
     "heading": "Cabañas",
     "description": "Todas expresan un mismo lenguaje arquitectónico y están habilitadas para alojar familias y amigos de cuatro a cinco personas. Poseen una iluminación cálida que induce al reposo, equipada para suplir toda necesidad y lograr una estadía singular.",

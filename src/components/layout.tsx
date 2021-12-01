@@ -1,5 +1,6 @@
 import React, { useState, ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";
+import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 // Components
@@ -62,6 +63,13 @@ const Layout: React.FC<IProps> = ({ children, current, active, onClick }) => {
 
   return (
     <I18nextProvider i18n={i18next}>
+      <Helmet>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossOrigin="anonymous"
+        ></script>
+      </Helmet>
       <div id="topPage"></div>
       <MenuClose toggleMenu={toggleMenu} open={open} />
       <Header
