@@ -40,13 +40,24 @@
   "callTo": "O llamenos al",
   "call": "llamar",
   "booking": "Reservar",
-  "tour": "Tour",
-  "tourDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae natus optio odit vitae, eaque itaque labore, ea temporibus numquam delectus, provident illo aliquid accusamus ad. Illo neque inventore nostrum illum!",
-  "seeAllPictures": "Ver todas las fotos",
-  "arrangements": {
-    "heading": "Distribución de las camas"
+  "intro": {
+    "heading": "¿Porqué hospedarse en Terrazas de Golf?",
+    "text1": "Terrazas de Golf, antigua residencia familiar convertida en un confortable hotel boutique desde enero de 2011.",
+    "text2": "Atendido por sus propietarios con la misión de servir, inspirados en sus años de participar como integrantes del Club Rotario y de la Fundación Oratorio Don Bosco Sor María Romero, de ayuda a la niñez en alto riesgo social."
   },
-  "elderly": {
+  "toKnow": {
+    "text": "Tenemos una ubicación proviliegiada, y rodeada de naturaleza; cerca de:",
+    "list": {
+      "item1": "5 km (3 millas) del Aeropuerto Internacional de San José (SJO) y a 9 km (5 millas) del Aeropuerto Tobias Bolaños (SYQ)",
+      "item2": "200 metros del Centro de Conferencias Wyndham Herradura",
+      "item3": "300 metros del Hotel DoubleTree Cariari",
+      "item4": "1 km del Centro de Eventos Pedregal",
+      "item5": "Contiguo al campo de golf del Cariari Country Club",
+      "item6": "A corta distancia de servicios públicos",
+      "item7": "Rodeado de naturaleza"
+    }
+  },
+  "discounts": {
     "heading": "Descuentos",
     "list": {
       "item1": "Mayores de 65 años",
@@ -54,6 +65,9 @@
       "item3": "Reservaciones a través de la web",
       "item4": "Tarifas especiales para convenciones"
     }
+  },
+  "arrangements": {
+    "heading": "Distribución de las camas"
   },
   "units": {
     "heading": "Cabañas",

@@ -13,6 +13,8 @@ import Layout from "./../components/layout";
 import SEO from "./../components/seo";
 import FadeInWhenVisible from "./../components/fadeInWhenVisible";
 import Spacer from "./../components/spacer";
+import ListGroup from "./../components/listGroup";
+import ListGroupItem from "./../components/listGroupItem";
 import HeroTwoColumns from "./../components/heroTwoColumns";
 import Reservations from "./../components/reservations";
 import CardImageWithList from "./../components/cardImageWithList";
@@ -21,7 +23,6 @@ import TextWithIcon from "./../components/textWithIcon";
 import Contact from "./../components/contact";
 
 // Assets
-import IconBullet from "./../images/svg/circle.svg";
 import CheckInIcon from "./../images/svg/clock.svg";
 import CheckOutIcon from "./../images/svg/clock.svg";
 import SmokeIcon from "./../images/svg/no-smoking.svg";
@@ -60,8 +61,14 @@ import { unitsImagesAlts, commonImagesAlts } from "./../modules/constants";
 
 const IndexPage = ({ data }: any) => {
   const { t } = useTranslation();
-  const { site, homeTopImage, homeTopMdUpImage, elderly, units, commonAreas } =
-    data || [];
+  const {
+    site,
+    homeTopImage,
+    homeTopMdUpImage,
+    discountsImage,
+    units,
+    commonAreas,
+  } = data || [];
 
   const { siteUrl, phoneRef } = site.siteMetadata;
 
@@ -177,23 +184,25 @@ const IndexPage = ({ data }: any) => {
     setActive(id);
   };
 
-  const introList = [
-    "5 km (3 miles) from San José International Airport and 9 km (5 miles) from Tobias Bolaños International Airport (SYQ)",
-    "200 meters from Wyndham Herradura Conference Center",
-    "300 meters from Double Tree Cariari Hotel",
-    "1 km from Pedregal Convention Center",
-    "Adjacent to Cariari Country Club golf course",
-    "Walking distance of public services",
-    "Surrounded by nature",
+  const toKnowPattern = "toKnow.list.item";
+
+  const toKnow = [
+    `${toKnowPattern}1`,
+    `${toKnowPattern}2`,
+    `${toKnowPattern}3`,
+    `${toKnowPattern}4`,
+    `${toKnowPattern}5`,
+    `${toKnowPattern}6`,
+    `${toKnowPattern}7`,
   ];
 
-  const elderlyPattern = "elderly.list.item";
+  const discountsPattern = "discounts.list.item";
 
   const discounts = [
-    `${elderlyPattern}1`,
-    `${elderlyPattern}2`,
-    `${elderlyPattern}3`,
-    `${elderlyPattern}4`,
+    `${discountsPattern}1`,
+    `${discountsPattern}2`,
+    `${discountsPattern}3`,
+    `${discountsPattern}4`,
   ];
 
   const rates = [
@@ -312,81 +321,30 @@ const IndexPage = ({ data }: any) => {
               <Container>
                 <Row className="justify-content-md-center align-items-center">
                   <Col xs={12}>
-                    {/* <Spacer bottomOnly={true}> */}
                     <h2 className="mb-3 mb-lg-5 text-lg-center">
-                      Why to stay at Terrazas de Golf?
+                      {t("intro.heading")}
                     </h2>
                     <p className="text-lg-center mb-3 mb-lg-5">
-                      Terrazas de Golf, former family residence turned into a
-                      comfortable boutique hotel since January 2011.
+                      {t("intro.text1")}
                     </p>
-                    {/* </Spacer> */}
                   </Col>
-                  <Col lg={8}>
+                  <Col lg={8} xl={9}>
                     <div className="px-0 px-lg-5 mb-5 mb-lg-0">
-                      {/* <h3 className="mb-3">Why to stay with us?</h3> */}
-                      <p className="">
-                        Run by its owners with the mission to serve, inspired by
-                        their years of participation as members of a local
-                        Rotary Club and their volunteer work assisting children
-                        in social risk at the Oratorio Don Bosco Foundation.
-                      </p>
-
-                      <p className="mb-3 md-lg-5">
-                        Tenemos una ubicación proviliegiada, y rodeada de
-                        naturaleza; cerca de:
-                      </p>
-                      <ul className="mb-0 ps-0">
-                        {introList.map((item, itemIndex) => (
-                          <li
-                            key={`list-item${itemIndex}`}
-                            className={ClassNames("d-flex ps-0", {
-                              "mb-2": introList.length !== itemIndex + 1,
-                            })}
-                          >
-                            <div className="d-flex px-4">
-                              <span className="me-3">
-                                <IconBullet
-                                  className="bullet"
-                                  style={{ width: "10px", marginTop: "-4px" }}
-                                />
-                              </span>
-                              {item}
-                            </div>
-                          </li>
+                      <p className="">{t("intro.text1")}</p>
+                      <p className="mb-3 md-lg-5">{t("toKnow.text")}</p>
+                      <ListGroup>
+                        {toKnow.map((item, index) => (
+                          <ListGroupItem key={index} text={item} />
                         ))}
-                      </ul>
+                      </ListGroup>
                     </div>
                   </Col>
-                  <Col lg={4}>
+                  <Col lg={4} xl={3}>
                     <CardImageWithList
-                      image={elderly}
-                      title="elderly.heading"
+                      image={discountsImage}
+                      title="discounts.heading"
                       list={discounts}
                     />
-                    {/* <div className="p-4 p-lg-5 border h-100">
-                      <p className="mb-4">Discounts:</p>
-                      <ul className="mb-0 ps-0">
-                        {discounts.map((item, itemIndex) => (
-                          <li
-                            key={`list-item${itemIndex}`}
-                            className={ClassNames("d-flex ps-0", {
-                              "mb-3": discounts.length !== itemIndex + 1,
-                            })}
-                          >
-                            <div className="d-flex">
-                              <span className="me-3">
-                                <IconBullet
-                                  className="bullet"
-                                  style={{ width: "10px", marginTop: "-4px" }}
-                                />
-                              </span>
-                              {item}
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div> */}
                   </Col>
                 </Row>
               </Container>
@@ -842,7 +800,7 @@ export const query = graphql`
         gatsbyImageData(width: 1600)
       }
     }
-    elderly: file(relativePath: { eq: "elderly.jpg" }) {
+    discountsImage: file(relativePath: { eq: "desc5.png" }) {
       childImageSharp {
         gatsbyImageData(width: 1600)
       }
