@@ -5,9 +5,9 @@
     "description": "Description here!!!"
   },
   "nav": {
-    "arrangements": {
+    "rooms": {
       "url": "Rooms",
-      "target": "#sleeping-arrangements"
+      "target": "#rooms"
     },
     "units": {
       "url": "Cabins",
@@ -32,7 +32,8 @@
   },
   "home": "Home",
   "hero": {
-    "title": "A place where nature coexists with a relaxing environment."
+    "heading": "In the heart of the city",
+    "text": "Terrazas de Golf is an old family residence transformed into a comfortable and welcoming Boutique Hotel, run by its owners with the mission of serving."
   },
   "followInstagram": "Follow us on Instagram",
   "followFacebook": "Follow us on Facebook",
@@ -66,7 +67,7 @@
       "item4": "Special conventions fares"
     }
   },
-  "arrangements": {
+  "rooms": {
     "heading": "Rooms"
   },
   "units": {

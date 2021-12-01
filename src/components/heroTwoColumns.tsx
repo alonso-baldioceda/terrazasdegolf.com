@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -50,6 +51,7 @@ const HeroTwoColumns = ({
   bgColor,
   textColor,
 }: Props) => {
+  const { t } = useTranslation();
   const img = getImage(image);
   const imgMdUp = getImage(imageMdUp);
 
@@ -68,11 +70,10 @@ const HeroTwoColumns = ({
           <Row className="align-items-center h-100 d-flex">
             <Col>
               <div className="px-2 py-4 p-md-4">
-                {/* <h1 className="text-black-pearl mb-4">{title}</h1> */}
                 <h1 className={`${textColor} text-black-pearl mb-3 mb-lg-4`}>
-                  En el corazón de la Ciudad
+                  {t(title)}
                 </h1>
-                <p className={`${textColor} mb-0`}>{description}</p>
+                <p className={`${textColor} mb-0`}>{t(description)}</p>
               </div>
             </Col>
           </Row>

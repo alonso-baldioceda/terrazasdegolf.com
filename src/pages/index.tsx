@@ -117,9 +117,7 @@ const IndexPage = ({ data }: any) => {
 
   useEffect(() => {
     const positionHero = 0;
-    const positionSleepingArrangements = getScrollPosition(
-      "sleeping-arrangements"
-    );
+    const positionRooms = getScrollPosition("rooms");
     const positionUnits = getScrollPosition("units");
     const positionCommonSpaces = getScrollPosition("common-spaces");
     const positionServices = getScrollPosition("services");
@@ -127,17 +125,11 @@ const IndexPage = ({ data }: any) => {
     const positionContact = getScrollPosition("contact");
     const positionRules = getScrollPosition("rules");
 
-    if (
-      scrollPosition >= positionHero &&
-      scrollPosition < positionSleepingArrangements
-    ) {
+    if (scrollPosition >= positionHero && scrollPosition < positionRooms) {
       handleMenuClick(-1);
     }
 
-    if (
-      scrollPosition >= positionSleepingArrangements &&
-      scrollPosition < positionUnits
-    ) {
+    if (scrollPosition >= positionRooms && scrollPosition < positionUnits) {
       handleMenuClick(0);
     }
 
@@ -294,8 +286,8 @@ const IndexPage = ({ data }: any) => {
           <HeroTwoColumns
             image={homeTopImage}
             imageMdUp={homeTopMdUpImage}
-            title="hero.title"
-            description="Terrazas de Golf es una antigua residencia familiar transformada en un confortable y acogedor Boutique Hotel, atendido por sus propietarios con la misión de servir."
+            title="hero.heading"
+            description="hero.text"
             bgColor="bg-lunar-green"
             textColor="text-white"
           />
@@ -351,14 +343,14 @@ const IndexPage = ({ data }: any) => {
             </div>
           </Spacer>
         </section>
-        <section className="anchor-block" id="sleeping-arrangements">
+        <section className="anchor-block" id="rooms">
           <FadeInWhenVisible>
             <div className="bg-white">
               <Container>
                 <Row>
                   <Col xs={12}>
                     <Spacer>
-                      <h2 className="m-0">{t(`arrangements.heading`)}</h2>
+                      <h2 className="m-0">{t(`rooms.heading`)}</h2>
                     </Spacer>
                   </Col>
                 </Row>

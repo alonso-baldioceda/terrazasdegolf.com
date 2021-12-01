@@ -35,9 +35,9 @@ module.exports = {
     image: siteImage,
     menuLinks: [
       {
-        name: "distribution",
-        anchor: "#sleeping-arrangements",
-        translate: "nav.arrangements.url",
+        name: "rooms",
+        anchor: "#rooms",
+        translate: "nav.rooms.url",
       },
       {
         name: "units",

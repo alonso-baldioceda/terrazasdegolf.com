@@ -5,9 +5,9 @@
     "description": "Descripción acá!!!"
   },
   "nav": {
-    "arrangements": {
-      "url": "Distribución",
-      "target": "#sleeping-arrangements"
+    "rooms": {
+      "url": "Cuartos",
+      "target": "#rooms"
     },
     "units": {
       "url": "Cabañas",
@@ -32,7 +32,8 @@
   },
   "home": "Inicio",
   "hero": {
-    "title": "Donde la naturaleza convive con un ambiente de descanso."
+    "heading": "En el corazón de la Ciudad",
+    "text": "Terrazas de Golf es una antigua residencia familiar transformada en un confortable y acogedor Boutique Hotel, atendido por sus propietarios con la misión de servir."
   },
   "followInstagram": "Siganos en Instagram",
   "followFacebook": "Siganos en Facebook",
@@ -66,8 +67,8 @@
       "item4": "Tarifas especiales para convenciones"
     }
   },
-  "arrangements": {
-    "heading": "Distribución de las camas"
+  "rooms": {
+    "heading": "Cuartos"
   },
   "units": {
     "heading": "Cabañas",
