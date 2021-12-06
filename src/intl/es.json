@@ -68,7 +68,28 @@
     }
   },
   "rooms": {
-    "heading": "Cuartos"
+    "heading": "Cuartos",
+    "descriptions": {
+      "room1": "One Queen bed",
+      "room2": "Two Queen beds",
+      "room3": "One King bed and deck with private garden",
+      "room4": "Two Queen beds and deck with private garden",
+      "room5": "Two Queen beds",
+      "room6": "One Queen bed",
+      "room7": "One Queen bed, 2 sofa beds, for equipped for people with limited ability",
+      "room8": "Two Queen beds and sofa bed",
+      "room9": "Two Queen beds",
+      "room10": "Two Queen beds, extra room with sofa bed, balcony and hot tub",
+      "room11": "Studio with 1 king bed (or 2 twin beds), sofa bed, living room, tub, refrigerator, electric appliances, tub"
+    },
+    "bottom": {
+      "text1": "Fare includes breakfast and transportation to and from Juan Santamaria (SJO) and Tobias Bolanos (SYQ) Airports",
+      "text2": "Rooms are \"triple\" when space allows an extra bed or sofa bed. These rooms are <span className=\"mono\">#7</span>, <span className=\"mono\">#8</span>, <span className=\"mono\">#10</span>, <span className=\"mono\">#11</span>",
+      "text3": "Free children under <span className=\"mono\">8</span> accompanied by their parents.",
+      "text4": "Rooms are \"triple\" when space allows an extra bed or sofa bed. These rooms are <span className=\"mono\">#7</span> and <span className=\"mono\">#8.</span>",
+      "text5": "Room rate for two pax.",
+      "text6": "<span className=\"mono\">$15</span> per additional pax."
+    }
   },
   "units": {
     "heading": "Cabañas",
@@ -181,6 +202,6 @@
     "links": "Enlaces",
     "heading": "Contáctenos",
     "address": "Costa Rica, Guanacaste, Río Piedras de Tilarán.",
-    "phone": "+1 (506) 8705 4201"
+    "phone": "+1 (506) 2239-4339 / +1 (506) 2239-1303"
   }
 }

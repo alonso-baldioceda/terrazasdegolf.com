@@ -65,7 +65,7 @@ module.exports = {
         translate: "nav.contact.url",
       },
     ],
-    phone: "(506) 8705 4201",
+    phone: "(506) 2239-4339 / (506) 2239-1303",
     phoneRef: "+1-506-8705-4201",
     whatsapp: "https://wa.me/50687054201",
     messenger: "http://m.me/vistalagoarenal",

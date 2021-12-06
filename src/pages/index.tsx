@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import ClassNames from "classnames";
+// import ClassNames from "classnames";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import Container from "react-bootstrap/Container";
@@ -13,6 +13,7 @@ import Layout from "./../components/layout";
 import SEO from "./../components/seo";
 import FadeInWhenVisible from "./../components/fadeInWhenVisible";
 import Spacer from "./../components/spacer";
+import GallerySlider from "./../components/GallerySlider";
 import ListGroup from "./../components/listGroup";
 import ListGroupItem from "./../components/listGroupItem";
 import HeroTwoColumns from "./../components/heroTwoColumns";
@@ -66,6 +67,7 @@ const IndexPage = ({ data }: any) => {
     homeTopImage,
     homeTopMdUpImage,
     discountsImage,
+    room1,
     units,
     commonAreas,
   } = data || [];
@@ -198,50 +200,17 @@ const IndexPage = ({ data }: any) => {
   ];
 
   const rates = [
-    {
-      text: "One Queen bed",
-      rate: "120",
-    },
-    {
-      text: "Two Queen beds",
-      rate: "130",
-    },
-    {
-      text: "One King bed and deck with private garden",
-      rate: "140",
-    },
-    {
-      text: "Two Queen beds and deck with private garden",
-      rate: "140",
-    },
-    {
-      text: "Two Queen beds",
-      rate: "130",
-    },
-    {
-      text: "One Queen bed",
-      rate: "120",
-    },
-    {
-      text: "One Queen bed, 2 sofa beds, for equipped for people with limited ability",
-      rate: "130",
-    },
-    {
-      text: "Two Queen beds and sofa bed",
-      rate: "130",
-    },
-    {
-      text: "Two Queen beds",
-      rate: "130",
-    },
-    {
-      text: "Two Queen beds, extra room with sofa bed, balcony and hot tub",
-      rate: "150",
-    },
-    {
-      text: "Studio with 1 king bed (or 2 twin beds), sofa bed, living room, tub, refrigerator, electric appliances, tub",
-      rate: "150",
-    },
+    "120",
+    "130",
+    "140",
+    "140",
+    "130",
+    "120",
+    "130",
+    "130",
+    "130",
+    "150",
+    "150",
   ];
 
   const roomsIncludes = [
@@ -293,7 +262,6 @@ const IndexPage = ({ data }: any) => {
           />
         </section>
         <section id="reservations" className="position-relative">
-          {/* <Spacer bottomOnly={true}> */}
           <div className="bg-salomie py-4 position-relative">
             <Container>
               <Row className="justify-content-md-center">
@@ -305,7 +273,6 @@ const IndexPage = ({ data }: any) => {
               </Row>
             </Container>
           </div>
-          {/* </Spacer> */}
         </section>
         <section id="initial-description" className="bg-merino">
           <Spacer>
@@ -374,9 +341,11 @@ const IndexPage = ({ data }: any) => {
                               <th scope="row">
                                 <span className="mono">{index + 1}</span>
                               </th>
-                              <td>{rate.text}</td>
                               <td>
-                                <span className="mono">{`$${rate.rate}`}</span>
+                                {t(`rooms.descriptions.room${index + 1}`)}
+                              </td>
+                              <td>
+                                <span className="mono">{rate}</span>
                               </td>
                             </tr>
                           ))}
@@ -411,9 +380,13 @@ const IndexPage = ({ data }: any) => {
 
                       <p className="mb-0">Room rate for two pax.</p>
 
-                      <p className="mb-0">
+                      <p className="mb-5">
                         <span className="mono">$15</span> per additional pax.
                       </p>
+                    </Col>
+                    <Col xs={12}>
+                      <h3 className="mb-5">Room #1</h3>
+                      <GallerySlider images={room1} />
                     </Col>
                   </Row>
                 </Container>
@@ -797,6 +770,26 @@ export const query = graphql`
         gatsbyImageData(width: 1600)
       }
     }
+    room1: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { eq: "rooms/1" }
+      }
+      sort: { order: ASC, fields: name }
+    ) {
+      totalCount
+      edges {
+        node {
+          base
+          name
+          id
+          childImageSharp {
+            gatsbyImageData(width: 640)
+          }
+        }
+      }
+    }
+
     units: allFile(
       filter: {
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }

@@ -17,7 +17,6 @@ const CardImageWithList: React.FC<IProps> = ({ image, title, list }) => {
   const { t } = useTranslation();
   const img = getImage(image);
 
-  console.log(list);
   return (
     <div className="d-flex flex-column bg-white">
       {img !== undefined && (

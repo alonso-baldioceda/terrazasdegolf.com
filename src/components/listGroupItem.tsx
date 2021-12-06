@@ -14,14 +14,13 @@ const StyledListGroupItem = styled.li`
 
 // Props
 interface IProps {
-  key: number;
   text: string;
 }
 
-const ListGroupItem: React.FC<IProps> = ({ key, text }) => {
+const ListGroupItem: React.FC<IProps> = ({ text }) => {
   const { t } = useTranslation();
   return (
-    <StyledListGroupItem key={`list-item-${key}`} className="d-flex ps-0">
+    <StyledListGroupItem className="d-flex ps-0">
       <div className="d-flex">
         <span className="me-3">
           <IconBullet

@@ -68,7 +68,7 @@ interface IProps {
 const Footer: React.FC<IProps> = ({ menu }) => {
   const { t } = useTranslation();
   return (
-    <StyledFooter className="text-center text-lg-start bg-gun-powder text-muted">
+    <StyledFooter className="text-center text-lg-start bg-lunar-green">
       <section>
         <div className="container">
           <div className="row">
