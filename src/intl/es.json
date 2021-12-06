@@ -70,25 +70,51 @@
   "rooms": {
     "heading": "Cuartos",
     "descriptions": {
-      "room1": "One Queen bed",
-      "room2": "Two Queen beds",
-      "room3": "One King bed and deck with private garden",
-      "room4": "Two Queen beds and deck with private garden",
-      "room5": "Two Queen beds",
-      "room6": "One Queen bed",
-      "room7": "One Queen bed, 2 sofa beds, for equipped for people with limited ability",
-      "room8": "Two Queen beds and sofa bed",
-      "room9": "Two Queen beds",
-      "room10": "Two Queen beds, extra room with sofa bed, balcony and hot tub",
-      "room11": "Studio with 1 king bed (or 2 twin beds), sofa bed, living room, tub, refrigerator, electric appliances, tub"
+      "room1": "Una cama Queen",
+      "room2": "Dos camas Queen",
+      "room3": "Una cama King y deck con jardín privado",
+      "room4": "Dos camas Queen y deck con jardín privado",
+      "room5": "Dos camas Queen",
+      "room6": "Una cama Queen",
+      "room7": "Una Cama Queen, 2 sofá cama, equipada para equipada para personas con capacidad limitada",
+      "room8": "Dos camas Queen y sofá cama",
+      "room9": "Dos camas Queen",
+      "room10": "Dos Camas Queen, cuarto adicional con sofá cama, balcón y bañera de hidromasaje",
+      "room11": "Tipo Studio una cama King (o dos individuales), sofá-cama, sala, tina, nevera y electrodomésticos"
+    },
+    "include": {
+      "heading": "Habitaciones \"deluxe\" espaciosas y decoradas con lujo y confort para el disfrute de los huéspedes:",
+      "text1": "Baño privado",
+      "text2": "Aire acondicionado",
+      "text3": "Pantalla de 32 pulgadas con televisión por cable",
+      "text4": "Agua caliente",
+      "text5": "Teléfono",
+      "text6": "Minibar",
+      "text7": "Radio-reloj",
+      "text8": "Caja de seguridad",
+      "text9": "Wi-Fi",
+      "text10": "Coffee Maker",
+      "text11": "Secadora"
     },
     "bottom": {
-      "text1": "Fare includes breakfast and transportation to and from Juan Santamaria (SJO) and Tobias Bolanos (SYQ) Airports",
-      "text2": "Rooms are \"triple\" when space allows an extra bed or sofa bed. These rooms are <span className=\"mono\">#7</span>, <span className=\"mono\">#8</span>, <span className=\"mono\">#10</span>, <span className=\"mono\">#11</span>",
-      "text3": "Free children under <span className=\"mono\">8</span> accompanied by their parents.",
-      "text4": "Rooms are \"triple\" when space allows an extra bed or sofa bed. These rooms are <span className=\"mono\">#7</span> and <span className=\"mono\">#8.</span>",
-      "text5": "Room rate for two pax.",
-      "text6": "<span className=\"mono\">$15</span> per additional pax."
+      "text1": "La tarifa incluye desayuno y transporte de y hacia Aeropuertos Juan Santamaría (SJO) y Tobías Bolaños (SYQ)",
+      "text2": "Las habitaciones se considerarán \"triples\" cuando el espacio permita poner una cama adicional o un sofá cama. Estas habitaciones son la",
+      "text3": {
+        "text3-1": "Gratis menores de",
+        "text3-2": "años acompañados de sus padres."
+      },
+      "text4": {
+        "text4-1": "Las habitaciones se considerarán “triples” cuando el espacio permita poner una cama adicional o un sofá cama. Estas habitaciones son la",
+        "text4-2": "y"
+      },
+      "text5": "La tarifa es para habitación con dos personas.",
+      "text6": "Se cobrará $15 por cada persona adicional.."
+    }
+  },
+  "gallery": {
+    "rooms": {
+      "heading": "Galería",
+      "text": "Habitación"
     }
   },
   "units": {

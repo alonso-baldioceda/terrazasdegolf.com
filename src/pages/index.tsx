@@ -24,6 +24,13 @@ import TextWithIcon from "./../components/textWithIcon";
 import Contact from "./../components/contact";
 
 // Assets
+import BathroomIcon from "./../images/svg/bathroom.svg";
+import AirConditionerIcon from "./../images/svg/air-conditioner.svg";
+import TvIcon from "./../images/svg/tv.svg";
+import PhoneIcon from "./../images/svg/phone.svg";
+import MinibarIcon from "./../images/svg/minibar.svg";
+import DigitalClockIcon from "./../images/svg/digital-clock.svg";
+import SaveBoxIcon from "./../images/svg/strongbox.svg";
 import CheckInIcon from "./../images/svg/clock.svg";
 import CheckOutIcon from "./../images/svg/clock.svg";
 import SmokeIcon from "./../images/svg/no-smoking.svg";
@@ -213,19 +220,6 @@ const IndexPage = ({ data }: any) => {
     "150",
   ];
 
-  const roomsIncludes = [
-    "Private bathroom",
-    "Air conditioning",
-    '32" TV with cable',
-    "Telephone",
-    "Minibar",
-    "Clock-radio",
-    "Safe-deposit box",
-    "Wi-Fi",
-    "Coffee Maker and complimentary coffee",
-    "Hair dryer",
-  ];
-
   return (
     <IndexPageWrapper>
       <Layout
@@ -280,7 +274,7 @@ const IndexPage = ({ data }: any) => {
               <Container>
                 <Row className="justify-content-md-center align-items-center">
                   <Col xs={12}>
-                    <h2 className="mb-3 mb-lg-5 text-lg-center">
+                    <h2 className="mb-4 mb-lg-5 text-lg-center">
                       {t("intro.heading")}
                     </h2>
                     <p className="text-lg-center mb-3 mb-lg-5">
@@ -351,46 +345,122 @@ const IndexPage = ({ data }: any) => {
                           ))}
                         </tbody>
                       </table>
-
+                      <p className="mb-3">{t(`rooms.bottom.text1`)}</p>
                       <p className="mb-3">
-                        Fare includes breakfast and transportation to and from
-                        Juan Santamaria (SJO) and Tobias Bolanos (SYQ) Airports
-                      </p>
-
-                      <p className="mb-3">
-                        Rooms are "triple" when space allows an extra bed or
-                        sofa bed. These rooms are{" "}
+                        {t(`rooms.bottom.text2`)}{" "}
                         <span className="mono">#7</span>,{" "}
                         <span className="mono">#8</span>,{" "}
                         <span className="mono">#10</span>,{" "}
-                        <span className="mono">#11</span>
+                        <span className="mono">#11</span>.
                       </p>
-
                       <p className="mb-0">
-                        Free children under <span className="mono">8</span>{" "}
-                        accompanied by their parents.
+                        {t(`rooms.bottom.text3.text3-1`)}{" "}
+                        <span className="mono">8</span>{" "}
+                        {t(`rooms.bottom.text3.text3-2`)}
                       </p>
-
                       <p className="mb-0">
-                        Rooms are "triple" when space allows an extra bed or
-                        sofa bed. These rooms are{" "}
-                        <span className="mono">#7</span> and{" "}
-                        <span className="mono">#8.</span>
+                        {t(`rooms.bottom.text4.text4-1`)}{" "}
+                        <span className="mono">#7</span>{" "}
+                        {t(`rooms.bottom.text4.text4-2`)}{" "}
+                        <span className="mono">#8</span>.
                       </p>
-
-                      <p className="mb-0">Room rate for two pax.</p>
-
+                      <p className="mb-0">{t(`rooms.bottom.text5`)}</p>
                       <p className="mb-5">
-                        <span className="mono">$15</span> per additional pax.
+                        <span className="mono">$15</span>{" "}
+                        {t(`rooms.bottom.text6`)}
                       </p>
                     </Col>
-                    <Col xs={12}>
-                      <h3 className="mb-5">Room #1</h3>
-                      <GallerySlider images={room1} />
+                    <Col xs={12} className="mb-5">
+                      <p className="mb-0">{t(`rooms.include.heading`)}</p>
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<BathroomIcon />}
+                        heading="rooms.include.text1"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<AirConditionerIcon />}
+                        heading="rooms.include.text2"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<TvIcon />}
+                        heading="rooms.include.text3"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<HotWaterIcon />}
+                        heading="rooms.include.text4"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<PhoneIcon />}
+                        heading="rooms.include.text5"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<MinibarIcon />}
+                        heading="rooms.include.text6"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<DigitalClockIcon />}
+                        heading="rooms.include.text7"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<SaveBoxIcon />}
+                        heading="rooms.include.text8"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4">
+                      <TextWithIcon
+                        icon={<WifiIcon />}
+                        heading="rooms.include.text9"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                      <TextWithIcon
+                        icon={<CoffeeMakerIcon />}
+                        heading="rooms.include.text10"
+                      />
+                    </Col>
+                    <Col md={6} xl={4} className="mb-0">
+                      <TextWithIcon
+                        icon={<HairDryerIcon />}
+                        heading="rooms.include.text11"
+                      />
                     </Col>
                   </Row>
                 </Container>
               </Spacer>
+            </div>
+          </FadeInWhenVisible>
+        </section>
+        <section className="anchor-block" id="gallery">
+          <FadeInWhenVisible>
+            <div className="bg-merino">
+              <Container>
+                <Row>
+                  <Col xs={12}>
+                    <Spacer>
+                      <h2 className="m-0">{t(`gallery.rooms.heading`)}</h2>
+                    </Spacer>
+                  </Col>
+                  <Col xs={12}>
+                    <h3 className="mb-5">{t(`gallery.rooms.text`)} #1</h3>
+                    <GallerySlider images={room1} />
+                  </Col>
+                </Row>
+              </Container>
             </div>
           </FadeInWhenVisible>
         </section>

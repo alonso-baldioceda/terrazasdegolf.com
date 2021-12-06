@@ -80,15 +80,41 @@
       "room8": "Two Queen beds and sofa bed",
       "room9": "Two Queen beds",
       "room10": "Two Queen beds, extra room with sofa bed, balcony and hot tub",
-      "room11": "Studio with 1 king bed (or 2 twin beds), sofa bed, living room, tub, refrigerator, electric appliances, tub"
+      "room11": "Studio with one king bed (or two twin beds), sofa bed, living room, tub, refrigerator, electric appliances, tub"
+    },
+    "include": {
+      "heading": "Deluxe rooms spacious and decorated with luxury and confort for our guests total satisfaction:",
+      "text1": "Private bathroom",
+      "text2": "Air conditioning",
+      "text3": "32\" TV with cable",
+      "text4": "Hot water",
+      "text5": "Telephone",
+      "text6": "Minibar",
+      "text7": "Clock-radio",
+      "text8": "Safe-deposit box",
+      "text9": "Wi-Fi",
+      "text10": "Coffee Maker and complimentary coffee",
+      "text11": "Hair dryer"
     },
     "bottom": {
       "text1": "Fare includes breakfast and transportation to and from Juan Santamaria (SJO) and Tobias Bolanos (SYQ) Airports",
-      "text2": "Rooms are \"triple\" when space allows an extra bed or sofa bed. These rooms are <span className=\"mono\">#7</span>, <span className=\"mono\">#8</span>, <span className=\"mono\">#10</span>, <span className=\"mono\">#11</span>",
-      "text3": "Free children under <span className=\"mono\">8</span> accompanied by their parents.",
-      "text4": "Rooms are \"triple\" when space allows an extra bed or sofa bed. These rooms are <span className=\"mono\">#7</span> and <span className=\"mono\">#8.</span>",
+      "text2": "Rooms are \"triple\" when space allows an extra bed or sofa bed. These rooms are",
+      "text3": {
+        "text3-1": "Free children under",
+        "text3-2": "accompanied by their parents."
+      },
+      "text4": {
+        "text4-1": "Rooms are \"triple\" when space allows an extra bed or sofa bed. These rooms are",
+        "text4-2": "and"
+      },
       "text5": "Room rate for two pax.",
-      "text6": "<span className=\"mono\">$15</span> per additional pax."
+      "text6": "per additional pax."
+    }
+  },
+  "gallery": {
+    "rooms": {
+      "heading": "Gallery",
+      "text": "Room"
     }
   },
   "units": {
