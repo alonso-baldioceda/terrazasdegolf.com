@@ -6,7 +6,7 @@
   },
   "nav": {
     "rooms": {
-      "url": "Cuartos",
+      "url": "Habitaciones",
       "target": "#rooms"
     },
     "gallery": {
@@ -68,7 +68,7 @@
     }
   },
   "rooms": {
-    "heading": "Cuartos",
+    "heading": "Habitaciones",
     "descriptions": {
       "room1": "Una cama Queen",
       "room2": "Dos camas Queen",

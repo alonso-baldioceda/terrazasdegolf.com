@@ -2,6 +2,7 @@ import React, { useState, ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 // Components
 import MenuClose from "./menuClose";
@@ -83,19 +84,21 @@ const Layout: React.FC<IProps> = ({ children, current, active, onClick }) => {
         setLanguage={setLanguage}
         current={current}
       />
-      <main className="main" id="main">
-        <MenuVertical
-          menu={menuLinks}
-          toggleMenu={toggleMenu}
-          open={open}
-          onClick={onClick}
-          active={active}
-          language={language}
-          setLanguage={setLanguage}
-          current={current}
-        />
-        {children}
-      </main>
+      <SimpleReactLightbox>
+        <main className="main" id="main">
+          <MenuVertical
+            menu={menuLinks}
+            toggleMenu={toggleMenu}
+            open={open}
+            onClick={onClick}
+            active={active}
+            language={language}
+            setLanguage={setLanguage}
+            current={current}
+          />
+          {children}
+        </main>
+      </SimpleReactLightbox>
       <Footer menu={menuLinks} />
       {/* TODO: Fix cookie */}
       {/* <Cookie /> */}

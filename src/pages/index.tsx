@@ -12,7 +12,7 @@ import Layout from "./../components/layout";
 import SEO from "./../components/seo";
 import FadeInWhenVisible from "./../components/fadeInWhenVisible";
 import Spacer from "./../components/spacer";
-import GallerySlider from "./../components/GallerySlider";
+import GallerySlider from "./../components/gallerySlider";
 import ListGroup from "./../components/listGroup";
 import ListGroupItem from "./../components/listGroupItem";
 import HeroTwoColumns from "./../components/heroTwoColumns";
@@ -67,16 +67,8 @@ const IndexPageWrapper = styled.div``;
 
 const IndexPage = ({ data }: any) => {
   const { t } = useTranslation();
-  const {
-    site,
-    homeTopImage,
-    homeTopMdUpImage,
-    discountsImage,
-    room1Big,
-    room1Thumbs,
-    // units,
-    // commonAreas,
-  } = data || [];
+  const { site, homeTopImage, homeTopMdUpImage, discountsImage, room1, room2 } =
+    data || [];
 
   const { siteUrl, phoneRef } = site.siteMetadata;
 
@@ -447,44 +439,29 @@ const IndexPage = ({ data }: any) => {
         <section className="anchor-block" id="gallery">
           <FadeInWhenVisible>
             <div className="bg-merino">
-              <Container>
-                <Row>
-                  <Col xs={12}>
-                    <Spacer>
-                      <h2 className="m-0">{t(`gallery.rooms.heading`)}</h2>
-                    </Spacer>
-                  </Col>
-                  <Col xs={12}>
-                    <h3 className="mb-5">{t(`gallery.rooms.text`)} #1</h3>
-                    <GallerySlider images={room1Big} thumbs={room1Thumbs} />
-                  </Col>
-                </Row>
-              </Container>
-            </div>
-          </FadeInWhenVisible>
-        </section>
-        <section className="anchor-block" id="units">
-          <FadeInWhenVisible>
-            <div className="bg-merino">
-              <Container>
-                <Row>
-                  <Col sm={12}>
-                    <Spacer>
-                      <h2 className="mb-5">{t(`units.heading`)}</h2>
-                      <p className="mb-0">{t(`units.description`)}</p>
-                    </Spacer>
-                    <Spacer bottomOnly={true}>
-                      <div className="border-white">
-                        {/* <Album
-                          images={units}
-                          alts={unitsImagesAlts}
-                          border="white"
-                        /> */}
+              <Spacer>
+                <Container>
+                  <Row className="justify-content-center">
+                    <Col xs={12}>
+                      <Spacer bottomOnly={true}>
+                        <h2 className="m-0">{t(`gallery.rooms.heading`)}</h2>
+                      </Spacer>
+                    </Col>
+                    <Col xs={12}>
+                      <h3 className="mb-5">{t(`gallery.rooms.text`)} #1</h3>
+                      <div className="mb-5">
+                        <GallerySlider images={room1} />
                       </div>
-                    </Spacer>
-                  </Col>
-                </Row>
-              </Container>
+                    </Col>
+                    <Col xs={12}>
+                      <h3 className="mt-5">{t(`gallery.rooms.text`)} #2</h3>
+                      <div className="mb-5">
+                        <GallerySlider images={room2} />
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
+              </Spacer>
             </div>
           </FadeInWhenVisible>
         </section>
@@ -839,43 +816,41 @@ export const query = graphql`
         gatsbyImageData(width: 1600)
       }
     }
-    room1Big: allFile(
-      filter: {
-        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-        relativeDirectory: { eq: "rooms/1/big" }
-      }
-      sort: { order: ASC, fields: name }
+    room1: allFile(
+      filter: { relativeDirectory: { eq: "rooms/1" } }
+      sort: { fields: base, order: ASC }
     ) {
-      totalCount
       edges {
         node {
-          base
-          name
           id
+          base
+          publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(
+              width: 900
+              transformOptions: { fit: CONTAIN }
+              placeholder: BLURRED
+              webpOptions: { quality: 50 }
+            )
           }
         }
       }
     }
-    room1Thumbs: allFile(
-      filter: {
-        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-        relativeDirectory: { eq: "rooms/1/thumbs" }
-      }
-      sort: { order: ASC, fields: name }
+    room2: allFile(
+      filter: { relativeDirectory: { eq: "rooms/2" } }
+      sort: { fields: base, order: ASC }
     ) {
-      totalCount
       edges {
         node {
-          base
-          name
           id
+          base
+          publicURL
           childImageSharp {
             gatsbyImageData(
+              width: 900
+              transformOptions: { fit: CONTAIN }
               placeholder: BLURRED
-              layout: CONSTRAINED
-              height: 400
+              webpOptions: { quality: 50 }
             )
           }
         }
