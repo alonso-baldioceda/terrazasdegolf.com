@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-// import ClassNames from "classnames";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import Container from "react-bootstrap/Container";
@@ -19,7 +18,6 @@ import ListGroupItem from "./../components/listGroupItem";
 import HeroTwoColumns from "./../components/heroTwoColumns";
 import Reservations from "./../components/reservations";
 import CardImageWithList from "./../components/cardImageWithList";
-import Album from "./../components/album";
 import TextWithIcon from "./../components/textWithIcon";
 import Contact from "./../components/contact";
 
@@ -65,7 +63,7 @@ import MapIcon from "./../images/svg/navigator.svg";
 const IndexPageWrapper = styled.div``;
 
 // Constants
-import { unitsImagesAlts, commonImagesAlts } from "./../modules/constants";
+// import { unitsImagesAlts, commonImagesAlts } from "./../modules/constants";
 
 const IndexPage = ({ data }: any) => {
   const { t } = useTranslation();
@@ -74,9 +72,10 @@ const IndexPage = ({ data }: any) => {
     homeTopImage,
     homeTopMdUpImage,
     discountsImage,
-    room1,
-    units,
-    commonAreas,
+    room1Big,
+    room1Thumbs,
+    // units,
+    // commonAreas,
   } = data || [];
 
   const { siteUrl, phoneRef } = site.siteMetadata;
@@ -457,7 +456,7 @@ const IndexPage = ({ data }: any) => {
                   </Col>
                   <Col xs={12}>
                     <h3 className="mb-5">{t(`gallery.rooms.text`)} #1</h3>
-                    <GallerySlider images={room1} />
+                    <GallerySlider images={room1Big} thumbs={room1Thumbs} />
                   </Col>
                 </Row>
               </Container>
@@ -476,11 +475,11 @@ const IndexPage = ({ data }: any) => {
                     </Spacer>
                     <Spacer bottomOnly={true}>
                       <div className="border-white">
-                        <Album
+                        {/* <Album
                           images={units}
                           alts={unitsImagesAlts}
                           border="white"
-                        />
+                        /> */}
                       </div>
                     </Spacer>
                   </Col>
@@ -503,11 +502,11 @@ const IndexPage = ({ data }: any) => {
                     <Spacer bottomOnly={true}>
                       <div className="common">
                         <div className="border-athens-gray">
-                          <Album
+                          {/* <Album
                             images={commonAreas}
                             border="gray"
                             alts={commonImagesAlts}
-                          />
+                          /> */}
                         </div>
                       </div>
                     </Spacer>
@@ -835,15 +834,15 @@ export const query = graphql`
         gatsbyImageData(width: 1600)
       }
     }
-    discountsImage: file(relativePath: { eq: "desc5.png" }) {
+    discountsImage: file(relativePath: { eq: "desc.png" }) {
       childImageSharp {
         gatsbyImageData(width: 1600)
       }
     }
-    room1: allFile(
+    room1Big: allFile(
       filter: {
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-        relativeDirectory: { eq: "rooms/1" }
+        relativeDirectory: { eq: "rooms/1/big" }
       }
       sort: { order: ASC, fields: name }
     ) {
@@ -854,16 +853,15 @@ export const query = graphql`
           name
           id
           childImageSharp {
-            gatsbyImageData(width: 640)
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
     }
-
-    units: allFile(
+    room1Thumbs: allFile(
       filter: {
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-        relativeDirectory: { eq: "units" }
+        relativeDirectory: { eq: "rooms/1/thumbs" }
       }
       sort: { order: ASC, fields: name }
     ) {
@@ -874,26 +872,11 @@ export const query = graphql`
           name
           id
           childImageSharp {
-            gatsbyImageData(width: 900)
-          }
-        }
-      }
-    }
-    commonAreas: allFile(
-      filter: {
-        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-        relativeDirectory: { eq: "common" }
-      }
-      sort: { order: ASC, fields: name }
-    ) {
-      totalCount
-      edges {
-        node {
-          base
-          name
-          id
-          childImageSharp {
-            gatsbyImageData(width: 900)
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: CONSTRAINED
+              height: 400
+            )
           }
         }
       }

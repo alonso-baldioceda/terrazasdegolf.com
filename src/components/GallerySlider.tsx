@@ -1,6 +1,7 @@
 import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Slider from "react-slick";
+import { GatsbyImage } from "gatsby-plugin-image";
+// import Slider from "react-slick";
+import { SRLWrapper } from "simple-react-lightbox";
 import styled from "styled-components";
 
 // Styles
@@ -29,11 +30,10 @@ const StyledGallerySlider = styled.div`
 // Types
 interface IProps {
   images: any;
+  thumbs: any;
 }
 
-const GallerySlider: React.FC<IProps> = ({ images }) => {
-  const { edges } = images || [];
-
+const GallerySlider: React.FC<IProps> = ({ images, thumbs }) => {
   let settings = {
     dots: false,
     infinite: true,
@@ -60,44 +60,26 @@ const GallerySlider: React.FC<IProps> = ({ images }) => {
   };
 
   return (
-    <StyledGallerySlider>
-      {edges.length > 0 ? (
-        <Slider {...settings}>
-          {edges.map((image: any, index: number) => {
-            const img = getImage(image.node);
-            const imgHeight = img?.height !== undefined ? img.height : 0;
-            const imgWidth = img?.height !== undefined ? img.width : 0;
-            const ratio = imgHeight / imgWidth;
-
-            const newWidth = Math.round(338 / ratio);
-
-            return img !== undefined ? (
-              <div
-                key={index}
-                style={{
-                  width: newWidth,
-                  backgroundColor: "#7c2222",
-                }}
-              >
-                {/* <img
-                  src={img.images.fallback?.src}
-                  alt=""
-                  width={`${newWidth}`}
-                  height={`338px`}
-                /> */}
-                <GatsbyImage
-                  image={img}
-                  alt={`gallery image number ${index}`}
-                  data-key={index}
-                />
-              </div>
-            ) : null;
-          })}
-        </Slider>
-      ) : (
-        ""
-      )}
-    </StyledGallerySlider>
+    <div>
+      <SRLWrapper>
+        {thumbs.edges.map((e: any, index: number) => {
+          return (
+            <a
+              href={
+                images.edges[index].node.childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              key={index}
+            >
+              <GatsbyImage
+                image={e.node.childImageSharp.gatsbyImageData}
+                alt={e.node.name}
+              />
+            </a>
+          );
+        })}
+      </SRLWrapper>
+    </div>
   );
 };
 

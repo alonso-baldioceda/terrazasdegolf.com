@@ -9,9 +9,9 @@
       "url": "Cuartos",
       "target": "#rooms"
     },
-    "units": {
-      "url": "Cabañas",
-      "target": "#units"
+    "gallery": {
+      "url": "Galería",
+      "target": "#gallery"
     },
     "commonSpaces": {
       "url": "Espacios Comúnes",

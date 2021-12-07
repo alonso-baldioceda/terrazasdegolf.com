@@ -9,9 +9,9 @@
       "url": "Rooms",
       "target": "#rooms"
     },
-    "units": {
-      "url": "Cabins",
-      "target": "#units"
+    "gallery": {
+      "url": "Gallery",
+      "target": "#gallery"
     },
     "commonSpaces": {
       "url": "Common spaces",

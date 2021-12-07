@@ -40,9 +40,9 @@ module.exports = {
         translate: "nav.rooms.url",
       },
       {
-        name: "units",
-        anchor: "#units",
-        translate: "nav.units.url",
+        name: "gallery",
+        anchor: "#gallery",
+        translate: "nav.gallery.url",
       },
       {
         name: "common",
