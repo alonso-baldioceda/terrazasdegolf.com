@@ -20,6 +20,7 @@ import Reservations from "./../components/reservations";
 import CardImageWithList from "./../components/cardImageWithList";
 import TextWithIcon from "./../components/textWithIcon";
 import Contact from "./../components/contact";
+import GoogleMapReact from "./../components/googleMapReact";
 
 // Assets
 import BathroomIcon from "./../images/svg/bathroom.svg";
@@ -68,7 +69,13 @@ import HairDryerIcon from "./../images/svg/hair-dryer.svg";
 // import WoodFireIcon from "./../images/svg/wood-fire.svg";
 import MapIcon from "./../images/svg/navigator.svg";
 
-const IndexPageWrapper = styled.div``;
+const IndexPageWrapper = styled.div`
+  /* .services {
+    .text-with-icon {
+      min-height: 60px;
+    }
+  } */
+`;
 
 // Constants
 // import { unitsImagesAlts, commonImagesAlts } from "./../modules/constants";
@@ -276,7 +283,7 @@ const IndexPage = ({ data }: any) => {
                     <h2 className="mb-4 mb-lg-5 text-lg-center">
                       {t("intro.heading")}
                     </h2>
-                    <p className="text-lg-center mb-3 mb-lg-5">
+                    <p className="text-lg-center mb-3 mb-lg-4">
                       {t("intro.text1")}
                     </p>
                   </Col>
@@ -319,7 +326,7 @@ const IndexPage = ({ data }: any) => {
                 <Container>
                   <Row>
                     <Col xs={12}>
-                      <h3 className="mb-3 mb-lg-5">Our rates</h3>
+                      <h3 className="mb-3 mb-lg-4">Our rates</h3>
                       <table className="table table-striped mb-5">
                         <thead>
                           <tr>
@@ -364,75 +371,75 @@ const IndexPage = ({ data }: any) => {
                         <span className="mono">#8</span>.
                       </p>
                       <p className="mb-0">{t(`rooms.bottom.text5`)}</p>
-                      <p className="mb-5">
+                      <p className="mb-3 mb-lg-4">
                         <span className="mono">$15</span>{" "}
                         {t(`rooms.bottom.text6`)}
                       </p>
                     </Col>
-                    <Col xs={12} className="mb-5">
+                    <Col xs={12} className="mb-3 mb-lg-4">
                       <p className="mb-0">{t(`rooms.include.heading`)}</p>
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<BathroomIcon />}
                         heading="rooms.include.text1"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<AirConditionerIcon />}
                         heading="rooms.include.text2"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<TvIcon />}
                         heading="rooms.include.text3"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<HotWaterIcon />}
                         heading="rooms.include.text4"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<PhoneIcon />}
                         heading="rooms.include.text5"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<MinibarIcon />}
                         heading="rooms.include.text6"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<DigitalClockIcon />}
                         heading="rooms.include.text7"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<SaveBoxIcon />}
                         heading="rooms.include.text8"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={4} className="mb-3">
                       <TextWithIcon
                         icon={<WifiIcon />}
                         heading="rooms.include.text9"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                    <Col md={6} xl={4} className="mb-0 mb-lg-0">
                       <TextWithIcon
                         icon={<CoffeeMakerIcon />}
                         heading="rooms.include.text10"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-0">
+                    <Col md={6} xl={4} className="mb-0 mb-lg-0">
                       <TextWithIcon
                         icon={<HairDryerIcon />}
                         heading="rooms.include.text11"
@@ -446,7 +453,7 @@ const IndexPage = ({ data }: any) => {
         </section>
         <section className="anchor-block" id="gallery">
           <FadeInWhenVisible>
-            <div className="bg-merino">
+            <div className="bg-gimblet">
               <Spacer>
                 <Container>
                   <Row className="justify-content-center">
@@ -456,7 +463,7 @@ const IndexPage = ({ data }: any) => {
                       </Spacer>
                     </Col>
                     <Col xs={12}>
-                      <h3 className="mb-3 mb-lg-5">
+                      <h3 className="mb-3 mb-lg-4">
                         {t(`gallery.rooms.text`)} #1
                       </h3>
                       <div className="mb-5">
@@ -492,63 +499,63 @@ const IndexPage = ({ data }: any) => {
               <div className="Services">
                 <Container>
                   <Row>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<WheelchairIcon />}
                         heading="services.handicapped"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<ParkingIcon />}
                         heading="services.parking"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<CheckInIcon />}
                         heading="services.open"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<GolfPlayerIcon />}
                         heading="services.membership"
                         subheading="services.membershipDetails"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<MassageIcon />}
                         heading="services.massage"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<ToolsIcon />}
                         heading="services.hairdresser"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<PortfolioIcon />}
                         heading="services.business"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<AirplaneIcon />}
                         heading="services.airportPickUp"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4">
+                    <Col md={6} xl={6} className="mb-3">
                       <TextWithIcon
                         icon={<MedicalIcon />}
                         heading="services.medical"
                         subheading="services.medicalDetails"
                       />
                     </Col>
-                    <Col md={6} xl={4} className="mb-4 mb-lg-0">
+                    <Col md={6} xl={6} className="mb-3 mb-lg-0">
                       <TextWithIcon
                         icon={<ArtsIcon />}
                         heading="services.art"
@@ -562,8 +569,27 @@ const IndexPage = ({ data }: any) => {
         </section>
         <section className="anchor-block" id="drive">
           <FadeInWhenVisible>
-            <Spacer>
-              <div className="bg-white">
+            <div className="bg-merino">
+              <Container>
+                <Row>
+                  <Col>
+                    <Spacer>
+                      <h2 className="mb-0">{t(`location.heading`)}</h2>
+                    </Spacer>
+                    <p className="mb-3">{t(`location.text`)}</p>
+                    <div className="mb-3">
+                      <ListGroup>
+                        <ListGroupItem text={t(`location.references.text1`)} />
+                        <ListGroupItem text={t(`location.references.text2`)} />
+                      </ListGroup>
+                    </div>
+                    <p className="mb-5">{t(`location.map`)}</p>
+                  </Col>
+                </Row>
+              </Container>
+              <GoogleMapReact lat={10.4918331} lng={-84.9286452} zoom={11} />
+            </div>
+            {/* <div className="bg-white">
                 <Container>
                   <Row className="align-items-center">
                     <Col md={5}>
@@ -583,29 +609,28 @@ const IndexPage = ({ data }: any) => {
                     </Col>
                   </Row>
                 </Container>
-              </div>
-            </Spacer>
+              </div> */}
           </FadeInWhenVisible>
         </section>
         <section className="anchor-block" id="contact">
           <FadeInWhenVisible>
-            <div className="bg-merino">
-              <Container>
-                <Row>
-                  <Col sm={12}>
-                    <Spacer>
-                      <h2 className="m-0">{t(`contact.heading`)}</h2>
-                    </Spacer>
-                    <Spacer bottomOnly={true}>
-                      <Contact />
-                    </Spacer>
-                  </Col>
-                </Row>
-              </Container>
-            </div>
+            {/* <div className="bg-merino"> */}
+            <Container>
+              <Row>
+                <Col sm={12}>
+                  <Spacer>
+                    <h2 className="m-0">{t(`contact.heading`)}</h2>
+                  </Spacer>
+                  <Spacer bottomOnly={true}>
+                    <Contact />
+                  </Spacer>
+                </Col>
+              </Row>
+            </Container>
+            {/* </div> */}
           </FadeInWhenVisible>
         </section>
-        <section className="anchor-block" id="rules">
+        {/* <section className="anchor-block" id="rules">
           <FadeInWhenVisible>
             <div className="bg-white">
               <Container>
@@ -651,7 +676,7 @@ const IndexPage = ({ data }: any) => {
               </Spacer>
             </div>
           </FadeInWhenVisible>
-        </section>
+        </section> */}
       </Layout>
     </IndexPageWrapper>
   );

@@ -4,37 +4,37 @@ import styled from "styled-components";
 
 // Styles
 export const StyledSpacing = styled.div`
-  padding: 3rem 0;
+  padding: 2rem 0;
 
   @media (min-width: 768px) {
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
   }
 
   @media (min-width: 992px) {
-    padding: 4.5rem 0;
+    padding: 3rem 0;
   }
 
   &.top-only {
-    padding: 3rem 0 0;
+    padding: 2rem 0 0;
 
     @media (min-width: 768px) {
-      padding: 3.5rem 0 0;
+      padding: 2.5rem 0 0;
     }
 
     @media (min-width: 992px) {
-      padding: 4.5rem 0 0;
+      padding: 3rem 0 0;
     }
   }
 
   &.bottom-only {
-    padding: 0 0 3rem;
+    padding: 0 0 2rem;
 
     @media (min-width: 768px) {
-      padding: 0 0 3.5rem;
+      padding: 0 0 2.5rem;
     }
 
     @media (min-width: 992px) {
-      padding: 0 0 4.5rem;
+      padding: 0 0 3rem;
     }
   }
 `;

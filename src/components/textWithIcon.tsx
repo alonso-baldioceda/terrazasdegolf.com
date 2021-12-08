@@ -5,13 +5,14 @@ import { useTranslation } from "react-i18next";
 // Styles
 const StyledTextWithIcon = styled.div`
   margin-bottom: 0;
+  min-height: 56px;
 
   svg {
     width: 34px;
 
-    @media (min-width: 992px) {
-      width: 44px;
-    }
+    /* @media (min-width: 992px) {
+      width: 34px;
+    } */
   }
 
   span {

@@ -82,7 +82,7 @@
       "heading": "Habitaciones \"deluxe\" espaciosas y decoradas con lujo y confort para el disfrute de los huéspedes:",
       "text1": "Baño privado",
       "text2": "Aire acondicionado",
-      "text3": "Pantalla de 32 pulgadas con televisión por cable",
+      "text3": "Pantalla de 32\" con televisión por cable",
       "text4": "Agua caliente",
       "text5": "Teléfono",
       "text6": "Minibar",
@@ -128,9 +128,14 @@
     "medicalDetails": "Transportation to one medical appointment, hospital or clinic",
     "art": "Exhibition and sale of costarican art"
   },
-  "drive": {
-    "heading": "Como llegar?",
-    "cta": "Vamos!!"
+  "location": {
+    "heading": "Cómo llegar a Terrazas de Golf?",
+    "text": "Puede utilizar cualquiera de estas direcciones como referencia:",
+    "references": {
+      "text1": "Del Centro de Conferencias Hotel Wyndham Herradura 100 metros sur y 100 metros oeste.",
+      "text2": "De la entrada principal del Cariari Country Club, 300 metros norte y 125 metros oeste."
+    },
+    "map": "Asistace también con este mapa:"
   },
   "contact": {
     "heading": "Escríbenos",

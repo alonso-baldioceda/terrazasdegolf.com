@@ -14,10 +14,28 @@ import Toast from "./toast";
 
 // Styles
 const ContactForm = styled.div`
+  .form-control {
+    border: solid var(--gimblet);
+    border-radius: 0;
+    height: 50px;
+  }
+
   .invalid {
     color: var(--terracotta);
     font-size: 0.875rem;
     margin-top: 10px;
+  }
+
+  .btn {
+    background: var(--lunar-green);
+    border-radius: 0;
+    color: var(--white);
+    height: 50px;
+    padding: 0.25rem 2rem;
+
+    &:hover {
+      color: var(--salomie);
+    }
   }
 `;
 

@@ -97,8 +97,6 @@ const GallerySlider: React.FC<IProps> = ({ images }) => {
     ],
   };
 
-  console.log("images", images.edges[0].node.publicURL);
-
   return (
     <StyledGallerySlider>
       <SRLWrapper>

@@ -91,3 +91,11 @@ strong {
 .bg-salomie {
   background: var(--salomie);
 }
+
+.bg-gimblet {
+  background: var(--gimblet);
+}
+
+.bg-crete {
+  background: var(--crete);
+}

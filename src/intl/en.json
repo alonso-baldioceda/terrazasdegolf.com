@@ -128,9 +128,14 @@
     "medicalDetails": "Transportation to one medical appointment, hospital or clinic",
     "art": "Exhibition and sale of costarican art"
   },
-  "drive": {
-    "heading": "Drive",
-    "cta": "Go!!"
+  "location": {
+    "heading": "How to get into Terrazas de Golf?",
+    "text": "You can use either address as a reference:",
+    "references": {
+      "text1": "Conference Center Hotel Wyndham Herradura 100 meters South and 100 meters West.",
+      "text2": "From Cariari Country Club main entrance, 300 meters North and 125 meters West."
+    },
+    "map": "You can also use this map:"
   },
   "contact": {
     "heading": "Contact Us",
