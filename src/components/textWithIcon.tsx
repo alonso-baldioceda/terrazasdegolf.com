@@ -7,7 +7,11 @@ const StyledTextWithIcon = styled.div`
   margin-bottom: 0;
 
   svg {
-    width: 44px;
+    width: 34px;
+
+    @media (min-width: 992px) {
+      width: 44px;
+    }
   }
 
   span {

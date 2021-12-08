@@ -13,10 +13,6 @@
       "url": "Galería",
       "target": "#gallery"
     },
-    "commonSpaces": {
-      "url": "Espacios Comúnes",
-      "target": "#common-spaces"
-    },
     "services": {
       "url": "Servicios",
       "target": "#services"
@@ -117,72 +113,20 @@
       "text": "Habitación"
     }
   },
-  "units": {
-    "heading": "Cabañas",
-    "description": "Todas expresan un mismo lenguaje arquitectónico y están habilitadas para alojar familias y amigos de cuatro a cinco personas. Poseen una iluminación cálida que induce al reposo, equipada para suplir toda necesidad y lograr una estadía singular.",
-    "unit1": {
-      "heading": "Cabaña 1",
-      "item1": "1 camarote",
-      "item2": "1 cama individual",
-      "item3": "1 cama queen"
-    },
-    "unit2": {
-      "heading": "Cabaña 2",
-      "item1": "1 cama individual",
-      "item2": "1 cama queen"
-    },
-    "unit3": {
-      "heading": "Cabaña 3",
-      "item1": "1 cama individual",
-      "item2": "1 cama queen"
-    },
-    "unit4": {
-      "heading": "Cabaña 4",
-      "item1": "1 camarote",
-      "item2": "1 cama individual",
-      "item3": "1 cama queen"
-    }
-  },
-  "commonSpaces": {
-    "heading": "Espacios comúnes",
-    "descriptionOne": "Un alojamiento rodeado de vegetación que embellece aún más el lago Arenal, el que parece invitarnos a disfrutar sus aguas o simplemente admirarlo.",
-    "descriptionTwo": "Sus áreas comunes convocan a una experiencia de vínculo social y personal enlazados a la naturaleza, recorriendo los jardines en el atardecer, tertuliando frente a la fogata en una noche coronada de estrellas y maravillarse con el alba sentado en el pasillo frente al lago recibiendo el rocío de la matutino."
-  },
   "services": {
-    "heading": "Servicios",
-    "headingBasics": "Básicos",
-    "wifi": "Wifi",
-    "washingMachine": "Lavadora",
-    "dryer": "Secadora",
-    "essentialServices": "Servicios imprescindibles",
-    "essentialServicesDetails": "Toallas, sábanas, jabón y papel higiénico",
-    "ethernet": "Conexión Ethernet",
-    "hotWater": "Agua caliente",
-    "headingInstallations": "Instalaciones",
-    "parking": "Estacionamiento gratuito en las instalaciones",
-    "petsFriedly": "Admitimos animales de compañía",
-    "headingKitchen": "Comedor",
-    "kitchen": "Cocina",
-    "kitchenDetails": "Los huéspedes pueden cocinar en este espacio",
-    "oven": "Horno",
-    "dishesAndSilverware": "Platos y cubiertos",
-    "refrigerator": "Refrigerador",
-    "stove": "Cocina",
-    "coffeeMaker": "Cafetera",
-    "cookingBasics": "Utensilios básicos para cocinar",
-    "cookingBasicsDetails": "Ollas y sartenes, aceite, sal y pimienta",
-    "barbecueUtensils": "Utensilios para hacer parrillada",
-    "headingBedAndBath": "Cama y baño",
-    "extraPillowsAndBlankets": "Almohadas y mantas adicionales",
-    "bedLinens": "Sábanas",
-    "shampoo": "Champú",
-    "hairDryer": "Secadora de pelo",
-    "headingOutdoor": "Al aire libre",
-    "patio": "Patio",
-    "garden": "Jardín",
-    "backyard": "Patio trasero",
-    "grill": "Parrila",
-    "woodFire": "Fogata"
+    "heading": "Services",
+    "handicapped": "Hotel and room available for handicapped",
+    "parking": "Private parking",
+    "open": "Open 24/7",
+    "membership": "Temporary membership for our guests",
+    "membershipDetails": "Access to a private club with 18 holes golf course, olimpic swimming pool, tennis courts",
+    "massage": "Massage service. Contact the reception before your arrival or during your stay",
+    "hairdresser": "Hairdresser upon request",
+    "business": "Business center and professional contacts",
+    "airportPickUp": "Pick up and drop off from Juan Santamaría (SJO) and Tobías Bolaños Airports (SYQ)",
+    "medical": "Medical or nurse care service upon request",
+    "medicalDetails": "Transportation to one medical appointment, hospital or clinic",
+    "art": "Exhibition and sale of costarican art"
   },
   "drive": {
     "heading": "Como llegar?",

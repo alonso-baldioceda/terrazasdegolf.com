@@ -45,11 +45,6 @@ module.exports = {
         translate: "nav.gallery.url",
       },
       {
-        name: "common",
-        anchor: "#common-spaces",
-        translate: "nav.commonSpaces.url",
-      },
-      {
         name: "services",
         anchor: "#services",
         translate: "nav.services.url",

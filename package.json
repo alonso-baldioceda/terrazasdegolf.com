@@ -94,6 +94,6 @@
     "sass-loader": "^12.2.0"
   },
   "resolutions": {
-    "graphql": "15.5.1"
+    "graphql": "15.5.2"
   }
 }

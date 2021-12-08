@@ -13,10 +13,6 @@
       "url": "Gallery",
       "target": "#gallery"
     },
-    "commonSpaces": {
-      "url": "Common spaces",
-      "target": "#common-spaces"
-    },
     "services": {
       "url": "Services",
       "target": "#services"
@@ -117,72 +113,20 @@
       "text": "Room"
     }
   },
-  "units": {
-    "heading": "The cottages",
-    "description": "All the cottages express the same architectural language and are enabled to accommodate families and friends of four to five people. They have warm lighting that induces rest, equipped to meet all needs and achieve a unique stay.",
-    "unit1": {
-      "heading": "Unit 1",
-      "item1": "1 bunk bed",
-      "item2": "1 single bed",
-      "item3": "1 cama queen"
-    },
-    "unit2": {
-      "heading": "Unit 2",
-      "item1": "1 single bed",
-      "item2": "1 queen bed"
-    },
-    "unit3": {
-      "heading": "Unit 3",
-      "item1": "1 single bed",
-      "item2": "1 queen bed"
-    },
-    "unit4": {
-      "heading": "Unit 4",
-      "item1": "1 bunk bed",
-      "item2": "1 single bed",
-      "item3": "1 queen bed"
-    }
-  },
-  "commonSpaces": {
-    "heading": "Common spaces",
-    "descriptionOne": "An accommodation surrounded by vegetation that further embellishes Lake Arenal, which seems to invite us to enjoy its waters or simply admire it.",
-    "descriptionTwo": "Its common areas summon an experience of social and personal bond linked to nature, walking through the gardens at sunset, chatting in front of the campfire on a night crowned with stars and marveling at the dawn sitting in the corridor in front of the lake receiving the dew of the morning."
-  },
   "services": {
     "heading": "Services",
-    "headingBasics": "Basics",
-    "wifi": "Wifi",
-    "washingMachine": "Washer",
-    "dryer": "Dryer",
-    "essentialServices": "Essentials",
-    "essentialServicesDetails": "Towels, bed sheets, soap, and toilet paper",
-    "ethernet": "Ethernet connection",
-    "hotWater": "Hot Water",
-    "headingInstallations": "Facilities",
-    "parking": "Free parking on premises",
-    "petsFriedly": "Pets friendly",
-    "headingKitchen": "Dining",
-    "kitchen": "Kitchen",
-    "kitchenDetails": "Space where guests can cook their own meals",
-    "oven": "Oven",
-    "dishesAndSilverware": "Dishes and silverware",
-    "refrigerator": "Refrigerator",
-    "stove": "Stove",
-    "coffeeMaker": "Coffee Maker",
-    "cookingBasics": "Cooking basics",
-    "cookingBasicsDetails": "Pots and pans, oil, salt and pepper",
-    "barbecueUtensils": "Barbecue utensils",
-    "headingBedAndBath": "Bed and bath",
-    "extraPillowsAndBlankets": "Extra pillows and blankets",
-    "bedLinens": "Bed linens",
-    "shampoo": "Shampoo",
-    "hairDryer": "Hair dryer",
-    "headingOutdoor": "Outdoor",
-    "patio": "Patio",
-    "garden": "Garden",
-    "backyard": "Backyard",
-    "grill": "Grill",
-    "woodFire": "Wood fire"
+    "handicapped": "Hotel and room available for handicapped",
+    "parking": "Private parking",
+    "open": "Open 24/7",
+    "membership": "Temporary membership for our guests",
+    "membershipDetails": "Access to a private club with 18 holes golf course, olimpic swimming pool, tennis courts",
+    "massage": "Massage service. Contact the reception before your arrival or during your stay",
+    "hairdresser": "Hairdresser upon request",
+    "business": "Business center and professional contacts",
+    "airportPickUp": "Pick up and drop off from Juan Santamaría (SJO) and Tobías Bolaños Airports (SYQ)",
+    "medical": "Medical or nurse care service upon request",
+    "medicalDetails": "Transportation to one medical appointment, hospital or clinic",
+    "art": "Exhibition and sale of costarican art"
   },
   "drive": {
     "heading": "Drive",
