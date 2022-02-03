@@ -114,19 +114,20 @@
     }
   },
   "services": {
-    "heading": "Services",
-    "handicapped": "Hotel and room available for handicapped",
-    "parking": "Private parking",
-    "open": "Open 24/7",
-    "membership": "Temporary membership for our guests",
-    "membershipDetails": "Access to a private club with 18 holes golf course, olimpic swimming pool, tennis courts",
-    "massage": "Massage service. Contact the reception before your arrival or during your stay",
-    "hairdresser": "Hairdresser upon request",
-    "business": "Business center and professional contacts",
-    "airportPickUp": "Pick up and drop off from Juan Santamaría (SJO) and Tobías Bolaños Airports (SYQ)",
-    "medical": "Medical or nurse care service upon request",
-    "medicalDetails": "Transportation to one medical appointment, hospital or clinic",
-    "art": "Exhibition and sale of costarican art"
+    "heading": "Servicios",
+    "handicapped": "Hotel y habitaciones aptos para discapacitados",
+    "parking": "Área de estacionamiento privado",
+    "open": "Abierto 24 horas, 7 días a la semana",
+    "membership": "Membresía temporal para nuestros huéspedes",
+    "membershipDetails": "Acceso al club con cancha de golf, natación, tenis",
+    "massage": "Servicio de masajes.",
+    "massageDetails": "Contacte la recepción antes de su llegada o durante su estadía",
+    "hairdresser": "Servicio de peluquería a solicitud de los huéspedes",
+    "business": "Centro de negocios y contactos profesionales",
+    "airportPickUp": "Traslados desde y hacia aeropuertos Juan Santamaría (SJO) y Tobías Bolaños (SYQ)",
+    "medical": "Servicios médicos o de enfermería bajo solicitud.",
+    "medicalDetails": "Traslado a una cita médica, hospital o clínica",
+    "art": "Exhibición y venta de arte costarricense"
   },
   "location": {
     "heading": "Cómo llegar a Terrazas de Golf?",
@@ -160,13 +161,6 @@
       "errorHeader": "Algo pasó :(",
       "errorBody": "Por favor inténtelo de nuevo, gracias!"
     }
-  },
-  "rules": {
-    "heading": "Lo que debes saber",
-    "checkIn": "Llegada: 15:00 a 21:00",
-    "checkOut": "Salida: 11:00",
-    "smoke": "Prohibido fumar",
-    "party": "Está prohibido hacer fiestas o eventos"
   },
   "cookies": {
     "heading": "Usamos cookies",

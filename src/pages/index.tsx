@@ -32,7 +32,7 @@ import DigitalClockIcon from "./../images/svg/digital-clock.svg";
 import SaveBoxIcon from "./../images/svg/strongbox.svg";
 import WheelchairIcon from "./../images/svg/wheelchair.svg";
 import CheckInIcon from "./../images/svg/clock.svg";
-import CheckOutIcon from "./../images/svg/clock.svg";
+// import CheckOutIcon from "./../images/svg/clock.svg";
 import GolfPlayerIcon from "./../images/svg/golf-player.svg";
 import MassageIcon from "./../images/svg/massage.svg";
 import ToolsIcon from "./../images/svg/tools.svg";
@@ -40,8 +40,8 @@ import PortfolioIcon from "./../images/svg/portfolio.svg";
 import AirplaneIcon from "./../images/svg/airplane.svg";
 import MedicalIcon from "./../images/svg/medical.svg";
 import ArtsIcon from "./../images/svg/arts.svg";
-import SmokeIcon from "./../images/svg/no-smoking.svg";
-import PartyIcon from "./../images/svg/party.svg";
+// import SmokeIcon from "./../images/svg/no-smoking.svg";
+// import PartyIcon from "./../images/svg/party.svg";
 import WifiIcon from "./../images/svg/wifi.svg";
 // import WashingIcon from "./../images/svg/washing.svg";
 // import DryerIcon from "./../images/svg/dryer.svg";
@@ -67,7 +67,7 @@ import HairDryerIcon from "./../images/svg/hair-dryer.svg";
 // import BackyardIcon from "./../images/svg/backyard.svg";
 // import GrillIcon from "./../images/svg/grill.svg";
 // import WoodFireIcon from "./../images/svg/wood-fire.svg";
-import MapIcon from "./../images/svg/navigator.svg";
+// import MapIcon from "./../images/svg/navigator.svg";
 
 const IndexPageWrapper = styled.div`
   /* .services {
@@ -453,7 +453,7 @@ const IndexPage = ({ data }: any) => {
         </section>
         <section className="anchor-block" id="gallery">
           <FadeInWhenVisible>
-            <div className="bg-gimblet">
+            <div className="bg-merino">
               <Spacer>
                 <Container>
                   <Row className="justify-content-center">
@@ -528,6 +528,7 @@ const IndexPage = ({ data }: any) => {
                       <TextWithIcon
                         icon={<MassageIcon />}
                         heading="services.massage"
+                        subheading="services.massageDetails"
                       />
                     </Col>
                     <Col md={6} xl={6} className="mb-3">
@@ -584,37 +585,21 @@ const IndexPage = ({ data }: any) => {
                       </ListGroup>
                     </div>
                     <p className="mb-5">{t(`location.map`)}</p>
+                    <Spacer bottomOnly={true}>
+                      <GoogleMapReact
+                        lat={10.4918331}
+                        lng={-84.9286452}
+                        zoom={11}
+                      />
+                    </Spacer>
                   </Col>
                 </Row>
               </Container>
-              <GoogleMapReact lat={10.4918331} lng={-84.9286452} zoom={11} />
             </div>
-            {/* <div className="bg-white">
-                <Container>
-                  <Row className="align-items-center">
-                    <Col md={5}>
-                      <h2 className="mb-5">{t(`drive.heading`)}</h2>
-                      <div className="mb-5">
-                        <a
-                          className="btn btn-dark"
-                          href="https://www.google.com/maps/place/Laguna+de+Arenal/@10.4916643,-84.9286452,12z/data=!3m1!4b1!4m5!3m4!1s0x8fa00445d4aa989b:0x8a2f8115437b0e4d!8m2!3d10.5052242!4d-84.8724284?hl=es"
-                          target="_blank"
-                        >
-                          {t(`drive.cta`)}
-                        </a>
-                      </div>
-                    </Col>
-                    <Col md={7}>
-                      <MapIcon />
-                    </Col>
-                  </Row>
-                </Container>
-              </div> */}
           </FadeInWhenVisible>
         </section>
         <section className="anchor-block" id="contact">
           <FadeInWhenVisible>
-            {/* <div className="bg-merino"> */}
             <Container>
               <Row>
                 <Col sm={12}>
@@ -627,56 +612,8 @@ const IndexPage = ({ data }: any) => {
                 </Col>
               </Row>
             </Container>
-            {/* </div> */}
           </FadeInWhenVisible>
         </section>
-        {/* <section className="anchor-block" id="rules">
-          <FadeInWhenVisible>
-            <div className="bg-white">
-              <Container>
-                <Row>
-                  <Col sm={12}>
-                    <Spacer>
-                      <h2 className="m-0">{t(`rules.heading`)}</h2>
-                    </Spacer>
-                  </Col>
-                </Row>
-              </Container>
-              <Spacer bottomOnly={true}>
-                <div className="rules">
-                  <Container>
-                    <Row>
-                      <Col md={6} xl={4} className="mb-4">
-                        <TextWithIcon
-                          heading="rules.checkIn"
-                          icon={<CheckInIcon />}
-                        />
-                      </Col>
-                      <Col md={6} xl={4} className="mb-4">
-                        <TextWithIcon
-                          heading="rules.checkOut"
-                          icon={<CheckOutIcon />}
-                        />
-                      </Col>
-                      <Col md={6} xl={4} className="mb-4">
-                        <TextWithIcon
-                          heading="rules.smoke"
-                          icon={<SmokeIcon />}
-                        />
-                      </Col>
-                      <Col md={6} xl={4} className="mb-4 mb-lg-0">
-                        <TextWithIcon
-                          heading="rules.party"
-                          icon={<PartyIcon />}
-                        />
-                      </Col>
-                    </Row>
-                  </Container>
-                </div>
-              </Spacer>
-            </div>
-          </FadeInWhenVisible>
-        </section> */}
       </Layout>
     </IndexPageWrapper>
   );

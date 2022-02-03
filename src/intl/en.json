@@ -18,7 +18,7 @@
       "target": "#services"
     },
     "drive": {
-      "url": "Drive",
+      "url": "Where we are?",
       "target": "#drive"
     },
     "contact": {
@@ -120,7 +120,8 @@
     "open": "Open 24/7",
     "membership": "Temporary membership for our guests",
     "membershipDetails": "Access to a private club with 18 holes golf course, olimpic swimming pool, tennis courts",
-    "massage": "Massage service. Contact the reception before your arrival or during your stay",
+    "massage": "Massage service.",
+    "massageDetails": "Contact the reception before your arrival or during your stay",
     "hairdresser": "Hairdresser upon request",
     "business": "Business center and professional contacts",
     "airportPickUp": "Pick up and drop off from Juan Santamaría (SJO) and Tobías Bolaños Airports (SYQ)",
@@ -160,13 +161,6 @@
       "errorHeader": "Something happened :(",
       "errorBody": "Please try again, thanks!!"
     }
-  },
-  "rules": {
-    "heading": "Things to know",
-    "checkIn": "Check-in: 3:00 PM - 9:00 PM",
-    "checkOut": "Checkout: 11:00 AM",
-    "smoke": "No smoking",
-    "party": "No parties or events"
   },
   "cookies": {
     "heading": "We use cookies",
